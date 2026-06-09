@@ -17,7 +17,7 @@ def load_documents():
             })
     return documents
 
-
+# asfd
 def chunk_document(text, source):
     chunk_size = 100
     overlap = 0
