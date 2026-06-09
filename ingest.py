@@ -9,9 +9,9 @@ def load_documents():
             filepath = os.path.join(DOCS_PATH, filename)
             with open(filepath, "r", encoding="utf-8") as f:
                 text = f.read()
-            game_name = filename.replace(".txt", "").replace("_", " ").title()
+            speech_name = filename.replace(".txt", "").replace("_", " ").title()
             documents.append({
-                "game": game_name,
+                "speech": speech_name,
                 "filename": filename,
                 "text": text,
             })
@@ -41,3 +41,6 @@ def chunk_document(text, source):
             counter += 1
 
         start += chunk_size - overlap
+
+    return chunks
+
