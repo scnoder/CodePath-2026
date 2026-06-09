@@ -1,0 +1,20 @@
+# API keys — never commit these
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# ChromaDB local storage
+chroma_db/
+chroma/
+
+# macOS
+.DS_Store
