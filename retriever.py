@@ -40,3 +40,6 @@ def retrieve(query, n_results=N_RESULTS):
         results_list.append(temp)
 
     return results_list
+
+def get_collection()
+    return _collection
