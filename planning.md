@@ -116,7 +116,7 @@ The tradeoff is that too much information might get contained.
      with my specified chunk size and overlap" is a plan. -->
 
 **Milestone 3 — Ingestion and chunking:**
-
+I plan to use Claude and ask it questions on why something isn't working and why something is needed. I expect to give a proper, well-thought out answer. 
 **Milestone 4 — Embedding and retrieval:**
 
 **Milestone 5 — Generation and interface:**

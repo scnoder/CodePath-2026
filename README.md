@@ -22,18 +22,18 @@
      Be specific: include URLs, subreddit names, forum thread titles, or file names.
      Aim for variety — sources that together cover different subtopics or perspectives. -->
 
-| # | Source | Type | URL or file path |
-|---|--------|------|-----------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
-| 10 | | | |
+| # | Source | Description | URL or location |
+|---|--------|-------------|-----------------|
+| 1 |https://www.abrahamlincolnonline.org/lincoln/speeches/speech.htm |List of Lincoln Speeches |https://www.abrahamlincolnonline.org/lincoln/speeches/lyceum.htm |
+| 2 |https://www.abrahamlincolnonline.org/lincoln/speeches/speech.htm |List of Lincoln Speeches |https://www.abrahamlincolnonline.org/lincoln/speeches/temperance.htm |
+| 3 |https://www.abrahamlincolnonline.org/lincoln/speeches/speech.htm |List of Lincoln Speeches |https://www.abrahamlincolnonline.org/lincoln/speeches/clay.htm |
+| 4 |https://www.abrahamlincolnonline.org/lincoln/speeches/speech.htm |List of Lincoln Speeches |https://www.abrahamlincolnonline.org/lincoln/speeches/house.htm |
+| 5 |https://www.abrahamlincolnonline.org/lincoln/speeches/speech.htm |List of Lincoln Speeches |https://www.abrahamlincolnonline.org/lincoln/speeches/cooper.htm |
+| 6 |https://www.abrahamlincolnonline.org/lincoln/speeches/speech.htm |List of Lincoln Speeches |https://www.abrahamlincolnonline.org/lincoln/speeches/farewell.htm |
+| 7 |https://www.abrahamlincolnonline.org/lincoln/speeches/speech.htm |List of Lincoln Speeches |https://www.abrahamlincolnonline.org/lincoln/speeches/1inaug.htm |
+| 8 |https://www.abrahamlincolnonline.org/lincoln/speeches/speech.htm |List of Lincoln Speeches |https://www.abrahamlincolnonline.org/lincoln/speeches/gettysburg.htm |
+| 9 |https://www.abrahamlincolnonline.org/lincoln/speeches/speech.htm |List of Lincoln Speeches |https://www.abrahamlincolnonline.org/lincoln/speeches/inaug2.htm |
+| 10 |https://www.abrahamlincolnonline.org/lincoln/speeches/speech.htm |List of Lincoln Speeches |https://www.abrahamlincolnonline.org/lincoln/speeches/last.htm |
 
 ---
 
