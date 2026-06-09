@@ -21,6 +21,9 @@ def embed(chunks):
 
 def retrieve(query, n_results=N_RESULTS):
     
+    if _collection.count() == 0:
+        return []
+
     results = _collection.query(
         query_texts = [query],
         n_results = n_results,
