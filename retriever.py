@@ -41,5 +41,5 @@ def retrieve(query, n_results=N_RESULTS):
 
     return results_list
 
-def get_collection()
+def get_collection():
     return _collection
