@@ -13,7 +13,7 @@ def run_ingestion():
     all_chunks = []
 
     for i in documents:
-        chunks = chunk_document(doc["text"], doc["source"])
+        chunks = chunk_document(documents["text"], documents["source"])
         all_chunks.extend(chunks)
 
     if all_chunks:
