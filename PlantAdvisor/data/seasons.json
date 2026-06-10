@@ -1,0 +1,49 @@
+{
+  "spring": {
+    "name": "Spring",
+    "months": ["March", "April", "May"],
+    "description": "The growing season is beginning. Most houseplants are waking up and starting to push new growth after the dormancy of winter. This is the time to resume regular care routines.",
+    "watering": "Begin increasing watering frequency as plants resume active growth. Check soil moisture more often — growth means more water uptake.",
+    "fertilizing": "Resume regular fertilizing for most plants. Use a balanced liquid fertilizer at half strength for the first application of the season.",
+    "light": "Increasing day length helps indoor plants. Clean dust from leaves to maximize light absorption. If you moved plants away from windows in winter, this is a good time to move them back.",
+    "repotting": "Ideal time to repot root-bound plants — doing so in spring gives plants the entire growing season to establish in their new container.",
+    "pests": "As temperatures warm, pest activity increases. Inspect plants carefully when resuming watering. Look for spider mites, fungus gnats, and mealybugs especially.",
+    "general_tip": "Don't rush spring care. Wait until you see new growth before dramatically increasing watering or fertilizing — some plants wake up slower than others."
+  },
+
+  "summer": {
+    "name": "Summer",
+    "months": ["June", "July", "August"],
+    "description": "Peak growing season. Most houseplants are at their most active. Heat and air conditioning both create care challenges.",
+    "watering": "Water more frequently — some plants may need water twice as often as in winter. Check soil every few days. Hot weather and air conditioning both dry soil faster.",
+    "fertilizing": "Continue regular fertilizing on schedule. This is when plants need nutrients most. Do not over-fertilize — more is not better.",
+    "light": "Long days provide maximum light. Be careful about direct afternoon sun through windows, which can be intense enough to burn leaves even on light-loving plants.",
+    "repotting": "Acceptable time to repot if needed, but spring is preferred. Avoid repotting during heat waves — stress compounds stress.",
+    "pests": "Peak pest season. Spider mites thrive in hot, dry conditions. Fungus gnats appear with overwatering. Check plants weekly. Isolate any infected plant immediately.",
+    "general_tip": "Watch for heat stress signs (drooping, scorching) and air conditioning stress (similar symptoms but from cold air drafts). Location relative to AC vents matters more in summer."
+  },
+
+  "fall": {
+    "name": "Fall",
+    "months": ["September", "October", "November"],
+    "description": "Growth is slowing down. Most houseplants are beginning to prepare for winter dormancy. This is the time to taper care routines, not end them abruptly.",
+    "watering": "Gradually reduce watering frequency as temperatures drop and plants slow down. Overwatering in fall is a common cause of winter root rot.",
+    "fertilizing": "Begin tapering off fertilizer by October. Most plants should receive no fertilizer by November. Fertilizing in fall pushes soft, vulnerable new growth before winter.",
+    "light": "Decreasing day length means plants may need to be moved closer to windows. Clean windows and wipe leaves to maximize light capture as days shorten.",
+    "repotting": "Avoid repotting in fall — plants are heading into a rest period and won't have time to establish.",
+    "pests": "Pest pressure decreases as temperatures drop. Do a final thorough inspection before bringing any outdoor plants back inside for winter.",
+    "general_tip": "Fall is the most commonly mismanaged season — people continue summer watering schedules into fall and end up with root rot by winter. Adjust gradually as you notice slower growth."
+  },
+
+  "winter": {
+    "name": "Winter",
+    "months": ["December", "January", "February"],
+    "description": "Dormancy or near-dormancy for most houseplants. Light is at its lowest, temperatures are cool, and most plants should receive minimal care. The most common winter mistake is caring too much.",
+    "watering": "Water significantly less — most plants need water once every 2–4 weeks, or when soil is fully dry. Check before you water, not on a schedule.",
+    "fertilizing": "No fertilizing for most plants. Fertilizing in winter pushes weak, etiolated growth that makes plants more vulnerable to pests and disease.",
+    "light": "Shortest days of the year. Move plants to your brightest windows. Remove anything blocking window light. Consider a grow light for light-demanding plants or those far from windows.",
+    "repotting": "Never repot in winter. Plants are dormant and won't recover well. Wait until spring growth begins.",
+    "pests": "Dry indoor heating creates ideal conditions for spider mites. Check plants monthly even if you're barely touching them. Mealybugs can persist through winter on neglected plants.",
+    "general_tip": "Benign neglect is actually the right strategy for many plants in winter. Check in, water when soil is dry, keep away from cold drafts and heating vents, and let them rest."
+  }
+}

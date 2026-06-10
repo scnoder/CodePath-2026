@@ -1,0 +1,491 @@
+{
+  "pothos": {
+    "display_name": "Pothos",
+    "scientific_name": "Epipremnum aureum",
+    "aliases": ["golden pothos", "devil's ivy", "hunter's robe", "silver vine"],
+    "difficulty": "easy",
+    "watering": {
+      "frequency": "every 1–2 weeks",
+      "description": "Allow the top inch of soil to dry out between waterings. Drooping leaves are a reliable signal it's time to water.",
+      "overwatering_signs": ["yellowing leaves", "mushy stems", "root rot", "gnats in soil"],
+      "underwatering_signs": ["wilting", "dry brown leaf tips", "crispy edges", "soil pulling away from pot edges"]
+    },
+    "light": {
+      "requirement": "low to bright indirect",
+      "description": "Highly adaptable. Thrives in bright indirect light but tolerates low light. Direct sun will scorch the leaves.",
+      "avoid": "direct sunlight"
+    },
+    "humidity": "tolerant of average household humidity (40–60%)",
+    "temperature": "65–85°F (18–29°C)",
+    "fertilizing": "monthly during spring and summer with a balanced liquid fertilizer; stop in fall and winter",
+    "common_issues": [
+      "yellowing leaves from overwatering",
+      "leggy and sparse growth in low light",
+      "brown tips from inconsistent watering or dry air"
+    ],
+    "seasonal_notes": {
+      "spring": "Resume fertilizing. Increase watering frequency as growth picks up.",
+      "summer": "Water more frequently. Watch for fungus gnats if soil stays too wet.",
+      "fall": "Taper off fertilizer. Start reducing watering frequency.",
+      "winter": "Water sparingly. Bright indirect light becomes more important. No fertilizer."
+    }
+  },
+
+  "snake_plant": {
+    "display_name": "Snake Plant",
+    "scientific_name": "Dracaena trifasciata",
+    "aliases": ["sansevieria", "mother-in-law's tongue", "saint george's sword", "viper's bowstring hemp"],
+    "difficulty": "easy",
+    "watering": {
+      "frequency": "every 2–6 weeks depending on season",
+      "description": "One of the most drought-tolerant houseplants. Allow soil to dry completely between waterings. When in doubt, wait.",
+      "overwatering_signs": ["mushy base", "yellowing leaves at the base", "root rot", "soft spots on leaves"],
+      "underwatering_signs": ["wrinkled or curling leaves", "dry brown tips", "leaves leaning outward"]
+    },
+    "light": {
+      "requirement": "low to bright indirect",
+      "description": "Survives almost anywhere. Grows fastest in bright indirect light but is genuinely one of the best low-light plants.",
+      "avoid": "prolonged direct sunlight in summer"
+    },
+    "humidity": "low humidity tolerant — thrives in typical dry indoor environments",
+    "temperature": "60–80°F (15–27°C); avoid temperatures below 50°F",
+    "fertilizing": "2–3 times per year during the growing season; never in winter",
+    "common_issues": [
+      "root rot from overwatering — the most common cause of death",
+      "brown tips from fluoride in tap water or physical damage",
+      "slow growth in low light (normal, not a problem)"
+    ],
+    "seasonal_notes": {
+      "spring": "Repot if root-bound. Begin light fertilizing.",
+      "summer": "Water slightly more often. Check for spider mites in hot dry conditions.",
+      "fall": "Reduce watering significantly.",
+      "winter": "Water once a month or less. Keep away from cold drafts."
+    }
+  },
+
+  "zz_plant": {
+    "display_name": "ZZ Plant",
+    "scientific_name": "Zamioculcas zamiifolia",
+    "aliases": ["zanzibar gem", "zuzu plant", "eternity plant", "aroid palm"],
+    "difficulty": "easy",
+    "watering": {
+      "frequency": "every 2–3 weeks",
+      "description": "The rhizomes store water, making it very forgiving. Let soil dry completely before watering.",
+      "overwatering_signs": ["yellowing leaves", "mushy rhizomes", "root rot"],
+      "underwatering_signs": ["leaves dropping", "wrinkled stems", "leaf yellowing starting from the bottom"]
+    },
+    "light": {
+      "requirement": "low to moderate indirect",
+      "description": "One of the best low-light plants. Grows slowly but steadily even in dim rooms. Avoid direct sunlight.",
+      "avoid": "direct sunlight — will scorch and bleach leaves"
+    },
+    "humidity": "tolerant of low humidity; no special requirements",
+    "temperature": "65–75°F (18–24°C)",
+    "fertilizing": "monthly in spring and summer with diluted balanced fertilizer",
+    "common_issues": [
+      "yellowing from overwatering",
+      "very slow growth (normal — be patient)",
+      "all parts are toxic if ingested — keep away from pets and children"
+    ],
+    "seasonal_notes": {
+      "spring": "Begin fertilizing. May push out new growth.",
+      "summer": "Water slightly more often. Can handle heat well.",
+      "fall": "Reduce fertilizing and watering.",
+      "winter": "Minimal water needed. Growth will slow or stop entirely."
+    }
+  },
+
+  "spider_plant": {
+    "display_name": "Spider Plant",
+    "scientific_name": "Chlorophytum comosum",
+    "aliases": ["airplane plant", "ribbon plant", "hen and chickens plant"],
+    "difficulty": "easy",
+    "watering": {
+      "frequency": "every 1–2 weeks",
+      "description": "Keep soil evenly moist during the growing season, slightly drier in winter. Sensitive to fluoride — use filtered or distilled water if possible.",
+      "overwatering_signs": ["root rot", "brown mushy roots", "wilting despite wet soil"],
+      "underwatering_signs": ["pale leaves", "drooping", "dry soil pulling from pot edges"]
+    },
+    "light": {
+      "requirement": "bright indirect",
+      "description": "Thrives in bright indirect light. Tolerates moderate indirect light but variegation may fade. Avoid direct sun.",
+      "avoid": "direct sunlight — scorches leaves and fades variegation"
+    },
+    "humidity": "average household humidity; benefits from occasional misting",
+    "temperature": "65–80°F (18–27°C)",
+    "fertilizing": "monthly during growing season with balanced fertilizer",
+    "common_issues": [
+      "brown leaf tips from fluoride in tap water or dry air",
+      "fading variegation in low light",
+      "spiderettes (babies) growing from long stems — these can be propagated easily"
+    ],
+    "seasonal_notes": {
+      "spring": "Resume fertilizing. Great time to propagate spiderettes.",
+      "summer": "Water more frequently. May produce more spiderettes.",
+      "fall": "Reduce fertilizing.",
+      "winter": "Water less frequently. Avoid cold windowsills."
+    }
+  },
+
+  "peace_lily": {
+    "display_name": "Peace Lily",
+    "scientific_name": "Spathiphyllum wallisii",
+    "aliases": ["spathiphyllum", "white sails plant", "spathe flower"],
+    "difficulty": "easy",
+    "watering": {
+      "frequency": "every 1–2 weeks",
+      "description": "Likes consistently moist (not wet) soil. Peace lilies will dramatically droop when thirsty — and bounce back quickly once watered. This drooping is a helpful signal, not permanent damage.",
+      "overwatering_signs": ["yellowing leaves", "brown leaf tips", "root rot", "gnats"],
+      "underwatering_signs": ["dramatic drooping", "wilted leaves", "dry soil"]
+    },
+    "light": {
+      "requirement": "low to medium indirect",
+      "description": "One of the few flowering plants that does well in low light. Flowers best with medium indirect light. Avoid direct sun.",
+      "avoid": "direct sunlight — will scorch and yellow leaves"
+    },
+    "humidity": "prefers high humidity (50%+); mist regularly or use a pebble tray",
+    "temperature": "65–85°F (18–29°C); very sensitive to cold drafts",
+    "fertilizing": "monthly during spring and summer; withhold in fall and winter",
+    "common_issues": [
+      "browning tips from dry air or inconsistent watering",
+      "yellowing leaves from overwatering",
+      "failure to bloom in low light conditions",
+      "toxic to pets — keep away from cats and dogs"
+    ],
+    "seasonal_notes": {
+      "spring": "Most likely to bloom in spring. Resume fertilizing.",
+      "summer": "Increase watering. Watch for spider mites in hot, dry conditions.",
+      "fall": "Reduce fertilizing. Begin reducing watering frequency.",
+      "winter": "Keep away from cold windows. Water sparingly."
+    }
+  },
+
+  "aloe_vera": {
+    "display_name": "Aloe Vera",
+    "scientific_name": "Aloe vera",
+    "aliases": ["aloe", "true aloe", "medicinal aloe", "burn plant"],
+    "difficulty": "easy",
+    "watering": {
+      "frequency": "every 2–3 weeks in summer, monthly in winter",
+      "description": "Water deeply and infrequently. Allow soil to dry completely between waterings. Aloe stores water in its leaves and will rot quickly in soggy soil.",
+      "overwatering_signs": ["mushy, translucent leaves", "brown soft spots", "leaves falling off", "root rot"],
+      "underwatering_signs": ["leaves curling inward", "thin or shriveled leaves", "dry brown tips"]
+    },
+    "light": {
+      "requirement": "bright indirect to some direct sun",
+      "description": "Loves lots of light. Does well in a south or west-facing window. Can handle a few hours of direct morning sun.",
+      "avoid": "intense afternoon direct sun in summer — can cause sunburn"
+    },
+    "humidity": "tolerates low humidity; prefers dry conditions",
+    "temperature": "55–80°F (13–27°C); protect from frost",
+    "fertilizing": "once in spring with diluted cactus fertilizer; rarely needs fertilizing",
+    "common_issues": [
+      "root rot from overwatering — the primary cause of death",
+      "sunburn from sudden exposure to intense direct sun",
+      "pups (offsets) crowding the pot — divide when this happens",
+      "leggy growth reaching for light"
+    ],
+    "seasonal_notes": {
+      "spring": "Resume watering. Fertilize once. Repot if needed.",
+      "summer": "Water more but ensure soil dries fully. Protect from intense afternoon sun.",
+      "fall": "Reduce watering significantly.",
+      "winter": "Water monthly or less. Keep above 50°F. No fertilizer."
+    }
+  },
+
+  "monstera": {
+    "display_name": "Monstera",
+    "scientific_name": "Monstera deliciosa",
+    "aliases": ["swiss cheese plant", "split-leaf philodendron", "ceriman", "fruit salad plant"],
+    "difficulty": "moderate",
+    "watering": {
+      "frequency": "every 1–2 weeks",
+      "description": "Water thoroughly when the top 2 inches of soil feel dry. Monsteras like to dry out slightly between waterings but shouldn't stay bone dry.",
+      "overwatering_signs": ["yellowing lower leaves", "root rot", "drooping with wet soil", "mushy stems"],
+      "underwatering_signs": ["drooping", "curling leaves", "slow growth", "dry edges"]
+    },
+    "light": {
+      "requirement": "bright indirect",
+      "description": "Thrives in bright indirect light. Leaf fenestration (the iconic holes) only develops well with sufficient light. Can tolerate medium indirect light but growth and splitting will be reduced.",
+      "avoid": "direct sunlight — scorches leaves"
+    },
+    "humidity": "prefers high humidity (50%+); mist, use a pebble tray, or group with other plants",
+    "temperature": "65–85°F (18–29°C); avoid temperatures below 60°F",
+    "fertilizing": "monthly during spring and summer with balanced fertilizer; reduce in fall and stop in winter",
+    "common_issues": [
+      "yellowing leaves from overwatering or nutrient deficiency",
+      "leaves without holes from insufficient light",
+      "root rot in heavy or consistently wet soil",
+      "aerial roots — normal, can be tucked into soil or a moss pole"
+    ],
+    "seasonal_notes": {
+      "spring": "Most active growth period. Fertilize monthly. Good time to repot.",
+      "summer": "Water more frequently. May need staking as it grows. Watch for spider mites.",
+      "fall": "Taper fertilizer. Begin reducing watering.",
+      "winter": "Minimal water. No fertilizer. Keep away from cold drafts."
+    }
+  },
+
+  "rubber_plant": {
+    "display_name": "Rubber Plant",
+    "scientific_name": "Ficus elastica",
+    "aliases": ["rubber fig", "rubber bush", "rubber tree", "indian rubber bush"],
+    "difficulty": "moderate",
+    "watering": {
+      "frequency": "every 1–2 weeks",
+      "description": "Water when the top inch of soil feels dry. Rubber plants hate inconsistency — try to water on a regular schedule. Wipe leaves with a damp cloth occasionally to remove dust.",
+      "overwatering_signs": ["yellowing lower leaves", "drooping", "root rot", "leaf drop"],
+      "underwatering_signs": ["drooping", "dry soil", "lower leaves dropping", "leaves curling"]
+    },
+    "light": {
+      "requirement": "bright indirect",
+      "description": "Does best with several hours of bright indirect light daily. Darker-leaved varieties tolerate lower light better than lighter ones.",
+      "avoid": "direct sun — can bleach the leaves; sudden changes in light cause leaf drop"
+    },
+    "humidity": "average household humidity is fine; prefers 40–60%",
+    "temperature": "60–80°F (15–27°C); avoid cold drafts and temperatures below 55°F",
+    "fertilizing": "monthly during growing season; no fertilizer in winter",
+    "common_issues": [
+      "dramatic leaf drop from temperature changes, drafts, or repotting stress",
+      "yellowing lower leaves from overwatering",
+      "leggy growth in insufficient light",
+      "sap from cuts can irritate skin — wear gloves when pruning"
+    ],
+    "seasonal_notes": {
+      "spring": "Active growth period. Fertilize monthly.",
+      "summer": "Water regularly. Good time to prune for shape.",
+      "fall": "Taper fertilizer. Begin reducing water.",
+      "winter": "Water sparingly. Keep away from cold windows. No fertilizer."
+    }
+  },
+
+  "boston_fern": {
+    "display_name": "Boston Fern",
+    "scientific_name": "Nephrolepis exaltata",
+    "aliases": ["sword fern", "ladder fern", "wild boston fern"],
+    "difficulty": "moderate",
+    "watering": {
+      "frequency": "every few days — keep soil consistently moist",
+      "description": "Boston ferns want consistently moist soil — not wet, not dry. This is the most demanding plant in the database for watering consistency. They will brown quickly if allowed to dry out.",
+      "overwatering_signs": ["yellowing fronds", "root rot", "soggy soil with bad smell"],
+      "underwatering_signs": ["browning fronds", "fronds drying and dropping", "crispy tips"]
+    },
+    "light": {
+      "requirement": "bright indirect",
+      "description": "Prefers bright indirect light. Avoid direct sun. Does reasonably well in moderate indirect light.",
+      "avoid": "direct sunlight — fries fronds quickly"
+    },
+    "humidity": "requires high humidity (50%+); mist daily, use a humidifier, or place on a pebble tray with water",
+    "temperature": "60–75°F (15–24°C); avoid temperature extremes and drafts",
+    "fertilizing": "monthly during growing season with diluted balanced fertilizer",
+    "common_issues": [
+      "browning fronds from low humidity — the most common issue",
+      "frond drop when moved or disturbed",
+      "spider mites and scale in dry conditions",
+      "shed fronds make a mess — consider placement carefully"
+    ],
+    "seasonal_notes": {
+      "spring": "Resume regular fertilizing. Growth picks up significantly.",
+      "summer": "Mist daily in hot, dry weather. Water frequently. Watch for pests.",
+      "fall": "Reduce fertilizer. Continue consistent moisture.",
+      "winter": "Most challenging season. Dry indoor air causes browning. Use a humidifier."
+    }
+  },
+
+  "orchid": {
+    "display_name": "Orchid",
+    "scientific_name": "Phalaenopsis spp.",
+    "aliases": ["phalaenopsis", "moth orchid", "phal orchid", "butterfly orchid"],
+    "difficulty": "moderate",
+    "watering": {
+      "frequency": "every 1–2 weeks",
+      "description": "Water by soaking the roots (or pot) thoroughly, then let drain and dry almost completely before watering again. Roots should be silver-gray when dry, green when wet. Many orchids come in clear pots specifically so you can check root moisture.",
+      "overwatering_signs": ["mushy brown roots", "yellowing leaves", "crown rot", "limp leaves that don't firm up when watered"],
+      "underwatering_signs": ["silver-gray roots for more than 2 weeks", "wrinkled leaves", "limp pseudobulbs"]
+    },
+    "light": {
+      "requirement": "bright indirect",
+      "description": "Needs bright indirect light to rebloom. An east-facing window is ideal. Can receive gentle morning sun.",
+      "avoid": "direct afternoon sun — will bleach and burn leaves"
+    },
+    "humidity": "prefers 50–70% humidity; mist roots (not flowers) or use a humidity tray",
+    "temperature": "65–80°F (18–27°C); a 10°F temperature drop at night helps trigger reblooming",
+    "fertilizing": "weakly weekly during active growth ('weekly, weakly') with orchid-specific fertilizer; reduce in winter",
+    "common_issues": [
+      "failure to rebloom — usually insufficient light or no night temperature drop",
+      "root rot from keeping roots wet too long",
+      "yellow leaves from too much direct light",
+      "crown rot if water pools at the center of the plant"
+    ],
+    "seasonal_notes": {
+      "spring": "After blooming, cut spike to a node below lowest bloom. New spike may emerge.",
+      "summer": "Active growing season. Fertilize regularly.",
+      "fall": "Cooler nights help trigger new spike development.",
+      "winter": "Reduce fertilizing. Cool nights (55–60°F) encourage reblooming."
+    }
+  },
+
+  "fiddle_leaf_fig": {
+    "display_name": "Fiddle Leaf Fig",
+    "scientific_name": "Ficus lyrata",
+    "aliases": ["ficus lyrata", "fiddle fig", "banjo fig"],
+    "difficulty": "hard",
+    "watering": {
+      "frequency": "every 1–2 weeks",
+      "description": "Water when the top 2 inches of soil are dry. Consistency is everything — same schedule, same amount, same location. Fiddle leaf figs react badly to change.",
+      "overwatering_signs": ["brown spots with yellow halos", "root rot", "soft wet spots on leaves", "leaf drop"],
+      "underwatering_signs": ["brown dry edges", "crunchy brown spots without yellow halos", "curling leaves"]
+    },
+    "light": {
+      "requirement": "bright indirect, consistent",
+      "description": "Needs several hours of bright indirect light daily. A consistent spot near a window is critical — moving this plant frequently causes dramatic leaf drop.",
+      "avoid": "direct afternoon sun; frequent relocation; cold drafts"
+    },
+    "humidity": "moderate humidity (40–60%); avoid dry conditions near heaters",
+    "temperature": "60–75°F (15–24°C); highly sensitive to cold drafts and temperature fluctuations",
+    "fertilizing": "monthly during growing season with balanced fertilizer; never in winter",
+    "common_issues": [
+      "brown spots from overwatering (wet spots) or underwatering (dry spots) — the cause matters for the fix",
+      "leaf drop from drafts, relocation, or inconsistent watering",
+      "slow recovery from stress — be patient after changes",
+      "root rot if planted in heavy soil or kept too wet"
+    ],
+    "seasonal_notes": {
+      "spring": "Growth period begins. Fertilize monthly. Repot if root-bound.",
+      "summer": "Water consistently. Can be moved outdoors in warm climates (acclimate slowly).",
+      "fall": "Reduce watering and fertilizing. Avoid moving the plant.",
+      "winter": "Minimal water. No fertilizer. Keep far from cold windows and heating vents."
+    }
+  },
+
+  "calathea": {
+    "display_name": "Calathea",
+    "scientific_name": "Calathea ornata",
+    "aliases": ["prayer plant", "pin-stripe calathea", "peacock plant", "cathedral windows"],
+    "difficulty": "hard",
+    "watering": {
+      "frequency": "every 1–2 weeks",
+      "description": "Keep soil consistently moist but not soggy. Calatheas are sensitive to minerals in tap water — use filtered, distilled, or rainwater to prevent brown edges. Let water sit overnight if using tap.",
+      "overwatering_signs": ["yellowing leaves", "root rot", "limp stems"],
+      "underwatering_signs": ["curling leaves", "brown crispy edges", "leaves remaining curled in the morning"]
+    },
+    "light": {
+      "requirement": "low to medium indirect",
+      "description": "Prefers indirect or filtered light. Direct sun will bleach and damage the distinctive leaf markings. Tolerates lower light better than most.",
+      "avoid": "direct sunlight — destroys the decorative leaf patterns"
+    },
+    "humidity": "requires high humidity (50%+); use a humidifier, mist frequently, or group with other plants",
+    "temperature": "60–80°F (15–27°C); sensitive to cold drafts and temperatures below 55°F",
+    "fertilizing": "monthly during growing season with diluted balanced fertilizer",
+    "common_issues": [
+      "brown leaf edges from tap water minerals or dry air — the most common issue",
+      "leaf curling from underwatering or low humidity",
+      "yellowing from overwatering",
+      "generally fussy — it's normal for this plant to require adjustment time in a new home"
+    ],
+    "seasonal_notes": {
+      "spring": "Growth resumes. Use filtered water. Fertilize monthly.",
+      "summer": "Increase humidity. Water consistently. Keep out of direct sun.",
+      "fall": "Reduce fertilizer. Maintain humidity — this is when indoor heating starts drying the air.",
+      "winter": "Hardest season for calatheas. Indoor heating dries air significantly. Use a humidifier."
+    }
+  },
+
+  "philodendron": {
+    "display_name": "Philodendron",
+    "scientific_name": "Philodendron hederaceum",
+    "aliases": ["heartleaf philodendron", "sweetheart plant", "velvet leaf philodendron"],
+    "difficulty": "easy",
+    "watering": {
+      "frequency": "every 1–2 weeks",
+      "description": "Water when the top inch of soil feels dry. Similar care to pothos — both are forgiving and communicate their needs through drooping.",
+      "overwatering_signs": ["yellowing leaves", "root rot", "mushy stems"],
+      "underwatering_signs": ["drooping", "wilting", "dry soil", "brown edges"]
+    },
+    "light": {
+      "requirement": "low to bright indirect",
+      "description": "Extremely adaptable. Grows fastest in bright indirect light but tolerates lower light conditions well. Trailing varieties work great in hanging baskets.",
+      "avoid": "direct sunlight — will scorch leaves"
+    },
+    "humidity": "average to high humidity; benefits from occasional misting",
+    "temperature": "65–85°F (18–29°C)",
+    "fertilizing": "monthly during spring and summer",
+    "common_issues": [
+      "leggy growth with large leaf spacing in low light",
+      "yellowing from overwatering",
+      "mealybugs and spider mites in dry conditions",
+      "toxic to pets — keep out of reach"
+    ],
+    "seasonal_notes": {
+      "spring": "Active growth period. Resume fertilizing. Good time to propagate.",
+      "summer": "Water more frequently. Can grow quickly — trim to encourage bushiness.",
+      "fall": "Reduce fertilizer.",
+      "winter": "Water sparingly. Provide as much light as possible."
+    }
+  },
+
+  "chinese_evergreen": {
+    "display_name": "Chinese Evergreen",
+    "scientific_name": "Aglaonema commutatum",
+    "aliases": ["aglaonema", "philippine evergreen", "poison dart plant"],
+    "difficulty": "easy",
+    "watering": {
+      "frequency": "every 1–2 weeks",
+      "description": "Allow the top inch to dry between waterings. More tolerant than most of both under and overwatering, making it very beginner-friendly.",
+      "overwatering_signs": ["yellowing leaves", "root rot", "soggy soil"],
+      "underwatering_signs": ["wilting", "drooping", "dry edges"]
+    },
+    "light": {
+      "requirement": "low to medium indirect",
+      "description": "One of the best low-light plants. Darker-leaved varieties tolerate lower light; lighter variegated varieties prefer more light. Avoid direct sun regardless of variety.",
+      "avoid": "direct sunlight — will bleach and scorch leaves"
+    },
+    "humidity": "average household humidity (40–60%); tolerant of dry conditions",
+    "temperature": "60–85°F (15–29°C); sensitive to temperatures below 55°F",
+    "fertilizing": "twice a year during growing season; light feeder",
+    "common_issues": [
+      "yellowing lower leaves from overwatering",
+      "brown tips from dry air or fluoride in tap water",
+      "all parts are toxic to pets"
+    ],
+    "seasonal_notes": {
+      "spring": "Fertilize once. May push new growth.",
+      "summer": "Water slightly more. Watch for pests.",
+      "fall": "Reduce watering.",
+      "winter": "Minimal water. Keep away from drafts."
+    }
+  },
+
+  "succulent": {
+    "display_name": "Succulent",
+    "scientific_name": "Various (Echeveria, Sedum, Haworthia, and others)",
+    "aliases": ["echeveria", "sedum", "haworthia", "hen and chicks", "stone plant", "jade plant", "burros tail"],
+    "difficulty": "easy",
+    "watering": {
+      "frequency": "every 2–3 weeks in growing season, monthly or less in winter",
+      "description": "Water thoroughly, then allow soil to dry out completely before watering again. 'Soak and dry' method. The number one killer of succulents is too much water.",
+      "overwatering_signs": ["mushy translucent leaves", "leaves falling off with a touch", "black or brown mushy stem base", "root rot"],
+      "underwatering_signs": ["wrinkled or shriveled leaves", "leaves feel less plump than usual", "bottom leaves drying and dropping"]
+    },
+    "light": {
+      "requirement": "bright indirect to direct sun",
+      "description": "Most succulents want as much light as possible — a south or west-facing window is ideal. Many can handle direct sun once acclimated.",
+      "avoid": "low light — will cause etiolation (stretching toward the light) and weak, pale growth"
+    },
+    "humidity": "prefers low humidity; poorly suited to humid climates or bathrooms",
+    "temperature": "60–80°F (15–27°C) for most varieties; some are cold-hardy outdoors",
+    "fertilizing": "once in early spring with diluted cactus fertilizer; succulents are very light feeders",
+    "common_issues": [
+      "etiolation (stretching, leaning, weak growth) from insufficient light",
+      "root rot from overwatering or poor drainage",
+      "mealybugs hiding in the rosette center",
+      "sunburn from sudden exposure to intense direct sun without acclimation"
+    ],
+    "seasonal_notes": {
+      "spring": "Resume watering. Fertilize once. Best time to repot.",
+      "summer": "Most active growth period. Water when fully dry. Protect from intense afternoon sun.",
+      "fall": "Begin reducing watering.",
+      "winter": "Water once a month or less. Dormancy period for many varieties."
+    }
+  }
+}
