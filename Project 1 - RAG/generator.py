@@ -1,13 +1,13 @@
 from groq import Groq
 from config import GROQ_API_KEY, LLM_MODEL
 
-_client = Groq (api_key=GROQ_API_KEY)
+_client = Groq(api_key=GROQ_API_KEY)
 
 def generate_response(query, retrieved_chunks):
     if not retrieved_chunks:
         return "cannot find anything"
     
-    knolwedge = ""
+    knowledge = ""
     for i in retrieved_chunks:
         if i["distance"] < 0.5:
             knowledge += f"From {i['source']}: {i['text']}\n\n\n\n"

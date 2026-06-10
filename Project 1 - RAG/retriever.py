@@ -1,5 +1,5 @@
 import chromadb
-from chromabd.utils import embedding_functions
+from chromadb.utils import embedding_functions
 from config import CHROMA_COLLECTION, CHROMA_PATH, EMBEDDING_MODEL, N_RESULTS
 
 _ef = embedding_functions.SentenceTransformerEmbeddingFunction(
@@ -43,3 +43,19 @@ def retrieve(query, n_results=N_RESULTS):
 
 def get_collection():
     return _collection
+
+
+
+# testing
+# queries = [
+#     "What concern about threats to American democracy did Lincoln express in the Lyceum Address?",
+#     "How did Lincoln describe slavery in both the Cooper Union Address and the Second Inaugural Address?", 
+#     "How did Lincoln's view of preserving the Union change between the First Inaugural Address and the Second Inaugural Address?"
+# ]
+
+# for query in queries:
+#     print(f"Query: {query}")
+#     results = retrieve(query)
+#     for r in results:
+#         print(f"  [{r['distance']:.3f}] ({r['source']}) {r['text'][:100]}")
+#     print("---")

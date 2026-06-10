@@ -27,6 +27,7 @@ def chunk_document(text, source):
     prefix = source.lower().replace(" ", "_")
     counter = 0
 
+    start = 0
     while start < len(text):
         end = start + chunk_size
         chunk = text[start:end].strip()
@@ -44,3 +45,19 @@ def chunk_document(text, source):
 
     return chunks
 
+
+# testing
+# import random
+
+# all_chunks = []
+# documents = load_documents()
+# for doc in documents:
+#     chunks = chunk_document(doc["text"], doc["speech"])
+#     all_chunks.extend(chunks)
+
+# print(f"Total chunks: {len(all_chunks)}")
+
+# for chunk in random.sample(all_chunks, 5):
+#     print(chunk["id"])
+#     print(chunk["text"])
+#     print("---")

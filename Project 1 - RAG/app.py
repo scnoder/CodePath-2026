@@ -1,7 +1,7 @@
 import gradio
 from ingest import load_documents, chunk_document
 from retriever import embed, retrieve, get_collection
-from generator import generate_responses
+from generator import generate_response
 
 def run_ingestion():
     collection = get_collection()
@@ -13,7 +13,7 @@ def run_ingestion():
     all_chunks = []
 
     for i in documents:
-        chunks = chunk_document(documents["text"], documents["source"])
+        chunks = chunk_document(i["text"], i["speech"])
         all_chunks.extend(chunks)
 
     if all_chunks:
@@ -26,10 +26,10 @@ def chat(message, history):
     if not message.strip():
         return ""
     
-    return generate_responses(message, retrieve(message))
+    return generate_response(message, retrieve(message))
 
 with gradio.Blocks(
-    theme = gradio.themes.Soft(primary_hue="black"),
+    theme = gradio.themes.Soft(primary_hue="red"),
     title = "LincolnBot"
 ) as demo:
     gradio.HTML("""
@@ -99,3 +99,4 @@ with gradio.Blocks(
 if __name__ == "__main__":
     run_ingestion()
     demo.launch()
+
