@@ -13,6 +13,7 @@
      Why is this knowledge valuable, and why is it hard to find through official channels?
      Example: "Student reviews of CS professors at [university] — useful because official
      course descriptions don't reflect teaching style, exam difficulty, or workload." -->
+This bot reviews speeches by Abraham Lincoln. THey are generally hard to read and understand as it was a complex topic and time period in US history. 
 
 ---
 
@@ -24,16 +25,8 @@
 
 | # | Source | Type | URL or file path |
 |---|--------|------|-----------------|
-| 1 | asdf| | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
-| 10 | | | |
+| 1 | Lincoln Library|Website |https://www.abrahamlincolnonline.org/lincoln/speeches/ |
+
 
 ---
 
@@ -47,13 +40,13 @@
      - What your final chunk count was across all documents -->
 
 **Chunk size:**
-
+My chunk sizes was 500 characters because it has a lot of small and important details within sentences.
 **Overlap:**
-
+I kept my overlap at 50 because i ddint want any information getting lost due to the intricate wordings and details.
 **Why these choices fit your documents:**
-
+These choices fit my document because ther eis a lot of wording and details that are provided in his speeches.
 **Final chunk count:**
-
+There are 1166 chunks.
 ---
 
 ## Embedding Model
@@ -65,9 +58,9 @@
      latency, and local vs. API-hosted. -->
 
 **Model used:**
-
+The embedding model used was all-MiniLM-L6-v2
 **Production tradeoff reflection:**
-
+There is a loss in semeantic nurance and it has a low memory usage.
 ---
 
 ## Grounded Generation
@@ -93,14 +86,16 @@
 
 | # | Question | Expected answer | System response (summarized) | Retrieval quality | Response accuracy |
 |---|----------|-----------------|------------------------------|-------------------|-------------------|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
+| 1 |When was the Gettysburg Address spoke? |The Gettysburg Address was delivered on November 19, 1863 |November 19, 1863. |eh could be better |100% |
+| 2 |What did Lincoln say about slavery in the Cooper Union Address? |Lincoln argued that the federal government had the right to control slavery in the territories, and that the founders who framed the Constitution understood this. He challenged Southern claims that Republicans were radical agitators. |He also mentioned that the supporters of slavery are dissatisfied with what the opponents of slavery say about slavery. Additionally, Lincoln noted that the founders have left no record of their understanding on the direct question of federal control of slavery in the federal territories. |much better this time  |100% |
+| 3 |What was Lincoln's warning about mobs and lawlessness in the Lyceum Address? |Lincoln warned that mob rule and disregard for laws posed a serious threat to American democracy.  |I don't have enough information on that. |it didnt provide a response so thats not good |0% |
+| 4 |How did Lincoln describe the cause of the Civil War? |The cause of the Civil War:
+Lincoln stated that slavery was the cause of the war. |Lincoln described the cause of the Civil War as being related to the interest of colored slaves, "All knew that this interest was, somehow, the cause of the war." He specifically stated that the object for which the insurgents would rend the Union was "to strengthen, perpetuate, and extend this interest". |Really good response |90% |
+| 5 |What arguments did Lincoln make in the House Divided speech? |
+Lincoln argued that the government could not endure permanently half slave and half free |I don't have enough information on that. The provided excerpts from "Housedivided" do not contain the full speech or the main arguments made by Lincoln. They only provide some background information and quotes related to the Nebraska bill and the issue of slavery. |it was worse this time |5% |
 
-**Retrieval quality:** Relevant / Partially relevant / Off-target  
-**Response accuracy:** Accurate / Partially accurate / Inaccurate
+**Retrieval quality:** 3 / 1 / 1  
+**Response accuracy:** 3 / 1 / 1
 
 ---
 

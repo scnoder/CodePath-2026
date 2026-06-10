@@ -1,7 +1,7 @@
-import gradio
+import gradio as gr
+from query import ask
 from ingest import load_documents, chunk_document
-from retriever import embed, retrieve, get_collection
-from generator import generate_response
+from retriever import embed, get_collection
 
 def run_ingestion():
     collection = get_collection()
@@ -21,18 +21,13 @@ def run_ingestion():
     else:
         print("no chunks")
 
+def handle_query(question):
+    result = ask(question)
+    sources = "\n".join(f"• {s}" for s in result["sources"])
+    return result["answer"], sources
 
-def chat(message, history):
-    if not message.strip():
-        return ""
-    
-    return generate_response(message, retrieve(message))
-
-with gradio.Blocks(
-    theme = gradio.themes.Soft(primary_hue="red"),
-    title = "LincolnBot"
-) as demo:
-    gradio.HTML("""
+with gr.Blocks(title="LincolnBot") as demo:
+    gr.HTML("""
         <div style="text-align:center; padding:1.25rem 0 0.5rem;">
             <h1 style="font-size:2rem; font-weight:700; color:#312e81; margin:0;">
                 LincolnBot
@@ -43,60 +38,14 @@ with gradio.Blocks(
         </div>
     """)
 
-    with gradio.Row():
-        with gradio.Column(scale = 3):
-            gradio.ChatInterface(
-                fn = chat,
-                type = "messages",
-                chatbot = gradio.Chatbot(
-                    height = 440,
-                    type = "messages",
-                    placeholder=(
-                        "<div style='text-align:center; color:#9ca3af; margin-top:3rem;'>"
-                        "Ask anything"
-                        "</div>"
-                    ),
-                ),
-                textbox = gradio.Textbox(
-                    placeholder="When was the Gettsbrug Address spoken?",
-                    container = False,
-                    scale = 7
-                ),
-                examples = [
-                    "How did Lincoln's view of preserving the Union change between the First Inaugural Address and the Second Inaugural Address?",
-                    "Which speech contains the phrase 'government of the people, by the people, for the people,' and what was the occasion?",
-                    "What concern about threats to American democracy did Lincoln express in the Lyceum Address?",
-                    "How did Lincoln describe slavery in both the Cooper Union Address and the Second Inaugural Address?",
-                    "hat was Lincoln's message in his Farewell Address to Springfield, and how does it compare with the tone of his Last Public Address?"
-                ],
-                cache_examples = False
-            )
+    inp = gr.Textbox(label="Your question", placeholder="When was the Gettysburg Address spoken?")
+    btn = gr.Button("Ask")
+    answer = gr.Textbox(label="Answer", lines=8)
+    sources = gr.Textbox(label="Retrieved from", lines=4)
 
-            with gradio.Column(scale=1, min_width=180):
-                gradio.HTML("""
-                <div style="background:#f5f3ff; border:1px solid #ddd6fe;
-                            border-radius:10px; padding:1rem; margin-top:0.5rem;">
-                    <ul style="font-size:0.85rem; color:#5b21b6; list-style:none;
-                                padding:0; margin:0; line-height:1.8;">
-                        <li>Cooper Union Address</li>
-                        <li>Eulogy on Henry Clay</li>
-                        <li>Farewell Address</li>
-                        <li>First Inagural Address</li>
-                        <li>Gettysburg Address</li>
-                        <li>House Divided</li>
-                        <li>Last Public Address</li>
-                        <li>Lyceum Address</li>
-                        <li>Second Inagural Address</li>
-                        <li>Temperance Address</li>
-                    </ul>
-                    <hr style="border:none; border-top:1px solid #ddd6fe; margin:0.75rem 0;">
-                    <p style="font-size:0.75rem; color:#7c3aed; margin:0; line-height:1.5;">
-                        Answers are grounded in the loaded speeches only.
-                    </p>
-                </div>
-            """)
-                
+    btn.click(handle_query, inputs=inp, outputs=[answer, sources])
+    inp.submit(handle_query, inputs=inp, outputs=[answer, sources])
+
 if __name__ == "__main__":
     run_ingestion()
     demo.launch()
-

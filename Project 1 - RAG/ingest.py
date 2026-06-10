@@ -19,8 +19,8 @@ def load_documents():
 
 # asfd
 def chunk_document(text, source):
-    chunk_size = 100
-    overlap = 0
+    chunk_size = 500
+    overlap = 50
     min_length = 50
 
     chunks = []
