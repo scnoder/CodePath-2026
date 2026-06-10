@@ -13,7 +13,7 @@
      Why is this knowledge valuable, and why is it hard to find through official channels?
      Example: "Student reviews of CS professors at [university] — useful because official
      course descriptions don't reflect teaching style, exam difficulty, or workload." -->
-This bot reviews speeches by Abraham Lincoln. THey are generally hard to read and understand as it was a complex topic and time period in US history. 
+This bot reviews speeches by Abraham Lincoln. They are generally hard to read and understand as it was a complex topic and time period in US history. 
 
 ---
 
@@ -42,9 +42,9 @@ This bot reviews speeches by Abraham Lincoln. THey are generally hard to read an
 **Chunk size:**
 My chunk sizes was 500 characters because it has a lot of small and important details within sentences.
 **Overlap:**
-I kept my overlap at 50 because i ddint want any information getting lost due to the intricate wordings and details.
+I kept my overlap at 50 because i didnt want any information getting lost due to the intricate wordings and details.
 **Why these choices fit your documents:**
-These choices fit my document because ther eis a lot of wording and details that are provided in his speeches.
+These choices fit my document because there is a lot of wording and details that are provided in his speeches.
 **Final chunk count:**
 There are 1166 chunks.
 ---
@@ -73,9 +73,10 @@ There is a loss in semeantic nurance and it has a low memory usage.
      the mechanism. -->
 
 **System prompt grounding instruction:**
+Use ONLY the following excerpts to answer the question. If the answer is not in the excerpts, say "I don't have enough information on that."
 
 **How source attribution is surfaced in the response:**
-
+THis is surfaced by making sure it only answeres the given prompt and uses the only sources provided.
 ---
 
 ## Evaluation Report
