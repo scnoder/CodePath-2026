@@ -113,13 +113,13 @@ Lincoln argued that the government could not endure permanently half slave and h
      results from an unrelated review" is an explanation. -->
 
 **Question that failed:**
-
+The question that failed was "What was Lincoln's warning about mobs and lawlessness in the Lyceum Address?" 
 **What the system returned:**
-
+The system responded by stating that it does not have enough information to answer the question.
 **Root cause (tied to a specific pipeline stage):**
-
+The probable cause would be the embedding and not enough information being sent to the model.
 **What you would change to fix it:**
-
+I would add semantic chunking so it can properly allocate space per source because the sources and different sizes and have different chunking patters.
 ---
 
 ## Spec Reflection
@@ -128,9 +128,9 @@ Lincoln argued that the government could not endure permanently half slave and h
      Answer both questions with at least 2–3 sentences each. -->
 
 **One way the spec helped you during implementation:**
-
+THe spec helped me plan what I was going to do and the expecations.
 **One way your implementation diverged from the spec, and why:**
-
+One divergence was the chunk and overlapping size because I didn't think I would need a large chunk but testinng providd that not enough information was being passed to the model.
 ---
 
 ## AI Usage
@@ -146,12 +146,12 @@ Lincoln argued that the government could not endure permanently half slave and h
 
 **Instance 1**
 
-- *What I gave the AI:*
-- *What it produced:*
-- *What I changed or overrode:*
+- I used Claude to debug why the output was intially saying that there was not enough information.
+- It gave me code to test in query.py to see what the chunks was because the retrival was probably the main problem.
+- I changed the chunking and overlapping size because of it and it works properly now.
 
 **Instance 2**
 
-- *What I gave the AI:*
-- *What it produced:*
-- *What I changed or overrode:*
+- I gave Claude the provided gradio code to tell me where the implementation can mess things up.
+- It told me to fix generator.py because there was extraneous code there in generate_response() in the return statement.
+- I added overrode the return statement with `return response.choices[0].message.content`
