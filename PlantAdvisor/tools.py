@@ -57,15 +57,22 @@ def lookup_plant(plant_name: str) -> dict:
     
     if normalized in _plant_db:
         return {
-            "found": False,
-            "name": normalized,
-            "message": "The plant is not found in the database and cannot be used for proper evaluation. plant found == false.",
+            "found": True,
+            "plant": _plant_db["normalized"]
         }
 
-    return {
-        "found": True,
-        "plant": _plant_db["normalized"]
-    }
+    for _, plant in _plant_db.items():
+        if plant["display_name"].lower() == normalized:
+            return {
+                "found": True,
+                "plant": plant
+            }
+        if normalized in [alias.lower() for alias in plant["aliases"]]:
+            return {
+                "found": True,
+                "plant": plant
+            }
+    
 
 def get_seasonal_conditions(season: str | None = None) -> dict:
     """
