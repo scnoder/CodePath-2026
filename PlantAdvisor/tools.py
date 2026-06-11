@@ -21,43 +21,51 @@ _MONTH_TO_SEASON = {
 
 
 def lookup_plant(plant_name: str) -> dict:
-    """
-    Search the plant database for a plant by name and return its care information.
+    # """
+    # Search the plant database for a plant by name and return its care information.
 
-    TODO — Milestone 1:
+    # TODO — Milestone 1:
 
-    Right now this always returns a "not found" response. Your job is to implement
-    the search logic so it can actually find plants.
+    # Right now this always returns a "not found" response. Your job is to implement
+    # the search logic so it can actually find plants.
 
-    The plant database (_plant_db) is a dict where keys are lowercase slugs like
-    "pothos", "snake_plant", "fiddle_leaf_fig". Each plant also has a "display_name"
-    field and an "aliases" list with common alternate names.
+    # The plant database (_plant_db) is a dict where keys are lowercase slugs like
+    # "pothos", "snake_plant", "fiddle_leaf_fig". Each plant also has a "display_name"
+    # field and an "aliases" list with common alternate names.
 
-    Your implementation should handle all three:
-      1. Direct key match (e.g., "pothos" → finds "pothos")
-      2. Display name match (e.g., "Pothos" → finds "pothos")
-      3. Alias match (e.g., "devil's ivy" → finds "pothos")
+    # Your implementation should handle all three:
+    #   1. Direct key match (e.g., "pothos" → finds "pothos")
+    #   2. Display name match (e.g., "Pothos" → finds "pothos")
+    #   3. Alias match (e.g., "devil's ivy" → finds "pothos")
 
-    All matching should be case-insensitive. Strip whitespace from the input.
+    # All matching should be case-insensitive. Strip whitespace from the input.
 
-    Return format when found:
-      {"found": True, "plant": <the full plant dict>}
+    # Return format when found:
+    #   {"found": True, "plant": <the full plant dict>}
 
-    Return format when not found:
-      {"found": False, "name": <original input>, "message": <helpful string>}
+    # Return format when not found:
+    #   {"found": False, "name": <original input>, "message": <helpful string>}
 
-    The message in the not-found case matters — the agent will use it to decide
-    what to tell the user. Your spec has a dedicated field for this — think about
-    what information would actually be helpful to the agent.
+    # The message in the not-found case matters — the agent will use it to decide
+    # what to tell the user. Your spec has a dedicated field for this — think about
+    # what information would actually be helpful to the agent.
 
-    Before writing code, complete the lookup_plant section of specs/tool-functions-spec.md.
-    """
+    # Before writing code, complete the lookup_plant section of specs/tool-functions-spec.md.
+    # """
+
+    normalized = plant_name.strip().lower()
+    
+    if normalized in _plant_db:
+        return {
+            "found": False,
+            "name": normalized,
+            "message": "The plant is not found in the database and cannot be used for proper evaluation. plant found == false.",
+        }
+
     return {
-        "found": False,
-        "name": plant_name,
-        "message": "Plant lookup not yet implemented. Complete Milestone 1.",
+        "found": True,
+        "plant": _plant_db["normalized"]
     }
-
 
 def get_seasonal_conditions(season: str | None = None) -> dict:
     """

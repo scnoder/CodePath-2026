@@ -1,6 +1,7 @@
 # Spec: Tool Functions
 
 **File:** `tools.py`
+
 **Status:** `get_seasonal_conditions` — Pre-implemented, read through. `lookup_plant` — complete spec fields before implementing.
 
 ---
@@ -70,7 +71,7 @@ likely match for clean user input. Aliases are the broadest net, so they go last
 *Aliases are stored as a list of strings. How will you check if the normalized input matches any alias in the list? Write your approach in pseudocode or plain English.*
 
 ```
-[your answer here]
+I'll use the normalized name and check if normalized in _plant_db and if it is then store or return _plant_db["basil"] or I will return false in some sense. 
 ```
 
 ---
@@ -80,7 +81,7 @@ likely match for clean user input. Aliases are the broadest net, so they go last
 *When a plant isn't found, the agent will read your message and use it to decide what to tell the user. Write the exact string you'll return — make it useful to the agent, not just to a human reading logs.*
 
 ```
-[your answer here]
+I will return "The plant is not found in the database and cannot be used for proper evaluation. plant found == false."
 ```
 
 ---
