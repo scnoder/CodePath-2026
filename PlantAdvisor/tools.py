@@ -99,3 +99,11 @@ def get_seasonal_conditions(season: str | None = None) -> dict:
     result = dict(_season_data[season_key])
     result["detected_season"] = detected
     return result
+
+
+# testing
+# print(lookup_plant("devil's ivy"))
+# print("-------")
+# print(lookup_plant("SNAKE PLANT"))
+# print("-------")
+# print(get_seasonal_conditions(season=None))

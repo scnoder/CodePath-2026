@@ -92,17 +92,17 @@ I will return "The plant is not found in the database and cannot be used for pro
 
 **Test: does `"devil's ivy"` return the pothos entry?**
 ```
-[yes / no — if no, describe what happened]
+Yes it does!
 ```
 
 **Test: does `"SNAKE PLANT"` return the snake plant entry?**
 ```
-[yes / no — if no, describe what happened]
+Yes it does!
 ```
 
 **One edge case you discovered while implementing:**
 ```
-[your answer here]
+One edge case that I discovered is with the aliases. I had to add a loop to check through all of _plant_db to make sure that it looked at aliases too.
 ```
 
 ---
@@ -184,12 +184,12 @@ The full season dict from `_season_data`, plus a `detected_season` boolean. Exam
 
 **Test: does calling with `season=None` return the correct season for the current month?**
 ```
-Current month: [month]
-Expected season: [season]
-Returned season: [season]
+Current month: June
+Expected season: Summer
+Returned season: Summer
 ```
 
 **Test: does calling with `season="winter"` return winter data regardless of the current month?**
 ```
-[yes / no]
+Yes
 ```
