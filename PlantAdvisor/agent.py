@@ -101,31 +101,85 @@ def dispatch_tool(tool_name: str, tool_args: dict) -> str:
 # ──────────────────────────────────────────────
 
 def run_agent(user_message: str, history: list) -> str:
-    """
-    Run the plant care agent for one user turn and return its response.
+    # """
+    # Run the plant care agent for one user turn and return its response.
 
-    TODO — Milestone 2:
+    # TODO — Milestone 2:
 
-    The agent loop follows a specific pattern that you'll implement here. Read
-    specs/agent-loop-spec.md carefully before writing any code — understand the
-    full loop before implementing any part of it.
+    # The agent loop follows a specific pattern that you'll implement here. Read
+    # specs/agent-loop-spec.md carefully before writing any code — understand the
+    # full loop before implementing any part of it.
 
-    The loop works like this:
-      1. Build a messages list: system prompt + conversation history + new user message
-      2. Call the LLM with messages and TOOL_DEFINITIONS
-      3. If the response contains tool_calls:
-           a. Append the assistant message (with tool_calls) to messages
-           b. For each tool call: execute via dispatch_tool(), append the result
-           c. Call the LLM again with the updated messages
-           d. Repeat until no more tool_calls (or MAX_TOOL_ROUNDS is reached)
-      4. Return the final text response
+    # The loop works like this:
+    #   1. Build a messages list: system prompt + conversation history + new user message
+    #   2. Call the LLM with messages and TOOL_DEFINITIONS
+    #   3. If the response contains tool_calls:
+    #        a. Append the assistant message (with tool_calls) to messages
+    #        b. For each tool call: execute via dispatch_tool(), append the result
+    #        c. Call the LLM again with the updated messages
+    #        d. Repeat until no more tool_calls (or MAX_TOOL_ROUNDS is reached)
+    #   4. Return the final text response
 
-    Key details to get right:
-      - The assistant message must be appended BEFORE tool results
-      - Tool result messages use role="tool" with a tool_call_id field
-      - Append the assistant's message object directly (not just its content)
-      - The history format from Gradio: list of [user_message, assistant_message] pairs
+    # Key details to get right:
+    #   - The assistant message must be appended BEFORE tool results
+    #   - Tool result messages use role="tool" with a tool_call_id field
+    #   - Append the assistant's message object directly (not just its content)
+    #   - The history format from Gradio: list of [user_message, assistant_message] pairs
 
-    Before writing code, complete specs/agent-loop-spec.md.
-    """
-    return "🌱 Agent not yet implemented. Complete Milestone 2 to activate the Plant Advisor."
+    # Before writing code, complete specs/agent-loop-spec.md.
+    # """
+
+    count = 0
+    
+    messages = [{"role": "system", "content": SYSTEM_PROMPT}]
+
+    for user_message, assistant_message in history:
+        messages.append({
+            "role": "user", 
+            "content": user_message
+        })
+
+        if assistant_message:
+            messages.append({
+                "role": "assistant", 
+                "content": assistant_message
+            })
+    
+    messages.append({
+        "role": "user", 
+        "content": user_message
+    })
+
+
+    while count < MAX_TOOL_ROUNDS:
+        response = client.chat.completions.create(
+                model=LLM_MODEL,
+                messages=messages,
+                tools=TOOL_DEFINITIONS,
+                tool_choice="auto",
+            )
+
+
+        assistant_message = response.choices[0].message
+        messages.append(assistant_message)
+
+        if not assistant_message.tool_calls:
+            return assistant_message.content
+        
+        for tool_call in assistant_message.tool_calls:
+            tool_result = dispatch_tool(tool_call.function.name, 
+                                        json.loads(tool_call.function.arguments)
+                                        )
+
+            messages.append({
+                "role": "tool", 
+                "tool_call_id": tool_call.id, 
+                "content": tool_result
+            })
+        
+        count += 1
+    return assistant_message.content
+    # return "🌱 The Plant Advisor cannot find proper information on this plant."
+
+
+print(type(MAX_TOOL_ROUNDS))
