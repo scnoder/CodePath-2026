@@ -183,7 +183,7 @@ def run_agent(user_message: str, history: list) -> str:
     # return "🌱 The Plant Advisor cannot find proper information on this plant."
 
 
-print(type(MAX_TOOL_ROUNDS))
+# print(type(MAX_TOOL_ROUNDS))
 
-# testing
-print(run_agent("How should I care for my Middlemist Red?", []))
+# # testing
+# print(run_agent("How should I care for my Middlemist Red?", []))
