@@ -89,7 +89,7 @@ def dispatch_tool(tool_name: str, tool_args: dict) -> str:
     if tool_name == "lookup_plant":
         result = lookup_plant(tool_args["plant_name"])
     elif tool_name == "get_seasonal_conditions":
-        result = get_seasonal_conditions(tool_args.get("season"))
+        result = get_seasonal_conditions(tool_args.get("seasons"))
     else:
         result = {"error": f"Unknown tool: {tool_name}"}
     print(f"  ← Result: {json.dumps(result)[:120]}{'...' if len(json.dumps(result)) > 120 else ''}")
@@ -152,7 +152,8 @@ def run_agent(user_message: str, history: list) -> str:
 
 
     while count < MAX_TOOL_ROUNDS:
-        response = client.chat.completions.create(
+        print(f"--- loop iteration {count} ---")
+        response = _client.chat.completions.create(
                 model=LLM_MODEL,
                 messages=messages,
                 tools=TOOL_DEFINITIONS,
@@ -183,3 +184,6 @@ def run_agent(user_message: str, history: list) -> str:
 
 
 print(type(MAX_TOOL_ROUNDS))
+
+# testing
+print(run_agent("How should I care for my Middlemist Red?", []))

@@ -58,7 +58,7 @@ def lookup_plant(plant_name: str) -> dict:
     if normalized in _plant_db:
         return {
             "found": True,
-            "plant": _plant_db["normalized"]
+            "plant": _plant_db[normalized]
         }
 
     for _, plant in _plant_db.items():

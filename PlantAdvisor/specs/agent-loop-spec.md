@@ -145,19 +145,19 @@ I can do messages["content"] to get the text content from the model.
 
 ```
 Query: "How should I care for my calathea?"
-Round 1 tool call: [tool name, args]
-Round 2 tool call: [tool name, args] (if any)
-Final response: [brief description]
+Round 1 tool call: {"found": true, "plant": {"display_name": "Calathea", "scientific_name": "Calathea ornata", "aliases": ["prayer plant", ...
+Round 2 tool call: N/A
+Final response: According to the care data for your calathea, you should water it every 1-2 weeks, keeping the soil consistently moist but not soggy. It's also important to use filtered, distilled, or rainwater to prevent brown edges. In terms of light, your calathea prefers low to medium indirect light, and direct sun will bleach and damage the distinctive leaf markings.
 ```
 
 **What happens when you ask about a plant that isn't in the database?**
 
 ```
-[describe the behavior you observed]
+It gave an error one time and then another time it said that it isnt in the databse and looked off things from memory.
 ```
 
 **One thing about the tool call API that surprised you:**
 
 ```
-[your answer here]
+I am surprised that one time it gave an error and then another time it didnt so.
 ```
