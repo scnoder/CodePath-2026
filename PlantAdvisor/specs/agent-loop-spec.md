@@ -122,7 +122,7 @@ for tool_call in assistant_message.tool_calls:
 *The loop should stop when: (a) the LLM returns a response with no tool calls, OR (b) the MAX_TOOL_ROUNDS limit is reached. Describe how you will detect each condition and what you will return in each case.*
 
 ```
-[your answer here]
+To check if there is no tool call through if no tool_call and then return the final message of the model. If the MAX_TOOL_ROUNDS limit is reached then I will end the loop and return that no results could be found for the question.
 ```
 
 ---
@@ -132,7 +132,7 @@ for tool_call in assistant_message.tool_calls:
 *Once the loop exits because there are no more tool calls, how do you extract the text content from the response object? What field holds the string you should return?*
 
 ```
-[your answer here]
+I can do messages["content"] to get the text content from the model.
 ```
 
 ---
