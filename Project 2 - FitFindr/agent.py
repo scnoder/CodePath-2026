@@ -142,6 +142,8 @@ def run_agent(query: str, wardrobe: dict) -> dict:
     #### Calling create_fit_card() ####
     fit_card = create_fit_card(suggested_outfit, listings[0])
     session["fit_card"] = fit_card
+
+    return session
 # ── CLI test ──────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
