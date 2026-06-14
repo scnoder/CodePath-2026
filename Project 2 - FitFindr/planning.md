@@ -167,6 +167,7 @@ Planning loop ----LLM decides which tool to call----------------->
 **Milestone 3 — Individual tool implementations:**
 I plan to use Claude and give it descriptions of where I have problems on to give me fixes for the code. This can be either syntax errors or logic errors to just to check where something has gone wrong. I will also give it my diagram for when implementations are needed.
 **Milestone 4 — Planning loop and state management:**
+I didn't use Claude for added the functions and implementing them into `agent.py` It was not very difficult. 
 
 ---
 

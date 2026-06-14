@@ -23,6 +23,7 @@ import json # for parsing
 
 # ── Groq client ───────────────────────────────────────────────────────────────
 from groq import Groq
+import os
 def _get_groq_client():
     """Initialize and return a Groq client using GROQ_API_KEY from .env."""
     api_key = os.environ.get("GROQ_API_KEY")
@@ -105,6 +106,9 @@ def run_agent(query: str, wardrobe: dict) -> dict:
     """
     # TODO: implement the planning loop
     session = _new_session(query, wardrobe)
+    count = 0
+    MAX_RUNNING = 10
+
 
     #### Parsing ####
     response = _get_groq_client().chat.completions.create(
@@ -124,27 +128,66 @@ def run_agent(query: str, wardrobe: dict) -> dict:
     session["parsed"] = parsed
 
     #### Calling search_listings() ####
-    listings = search_listings(session["parsed"]["description"], session["parsed"]["size"], float(session["parsed"]["price"]))
+    listings = search_listings(session["parsed"]["description"], 
+                               session["parsed"]["size"], 
+                               float(session["parsed"]["price"]) if parsed["price"] is not None else None
+                               )
 
-    if listings:
-        session["search_results"] = listings
-    else:
-        session["error"] = "Apologies, there as been a small bump. Please try again!"
-        return session["error"]
-        return session["error"]
-    
     #### Select item to use ####
+    if not listings:
+        session["error"] = "Apologies, there as been a small bump. Please try again with a different item!"
+        return session
+    
+    session["search_results"] = listings
     session["selected_item"] = listings[0]
 
-    #### Calling suggest_outfit() ####
-    suggested_outfit = suggest_outfit(session["selected_item"], wardrobe)
-    session["outfit_suggestion"] = suggested_outfit
+    #### Creating the loop ####
+    messages = [
+        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "user", "content": query}
+    ]
 
-    #### Calling create_fit_card() ####
-    fit_card = create_fit_card(suggested_outfit, listings[0])
-    session["fit_card"] = fit_card
+    while count < MAX_RUNNING:
+        response = _get_groq_client().chat.completions.create(
+            model="llama3-8b-8192",
+            messages=messages,
+            tools=TOOL_DEFINITIONS,
+            tool_choice="auto"
 
-    return session #test
+        )
+        assistant_message = response.choices[0].message
+        messages.append(assistant_message)
+
+        if not assistant_message.tool_calls:
+            break
+        
+        for tool_call in assistant_message.tool_calls:
+            tool_name = tool_call.function.name
+            tool_args = json.loads(tool_call.function.arguments)
+
+            if tool_name == "suggest_outfit":
+                #### Calling suggest_outfit() ####
+                result = suggest_outfit(session["selected_item"], wardrobe)
+                session["outfit_suggestion"] = result
+            
+            elif tool_name == "create_fit_card":
+                #### Calling create_fit_card() ####
+                if not session.get("outfit_suggestion"):
+                    result = "No outfit generated yet"
+                else:
+                    result = create_fit_card(session["outfit_suggestion"], listings[0])
+                    session["fit_card"] = result
+            
+            else:
+                result = {"error": f"Unknown tool: {tool_name}"}
+
+            messages.append({
+                "role": "tool",
+                "tool_call_id": tool_call.id,
+                "content": json.dumps(result if isinstance(result, (dict, list)) else result)
+            })
+
+    return session
 # ── CLI test ──────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":

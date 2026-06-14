@@ -109,30 +109,30 @@ def search_listings(
 # ── Tool 2: suggest_outfit ────────────────────────────────────────────────────
 
 def suggest_outfit(new_item: dict, wardrobe: dict) -> str:
-    # """
-    # Given a thrifted item and the user's wardrobe, suggest 1–2 complete outfits.
+    """
+    Given a thrifted item and the user's wardrobe, suggest 1–2 complete outfits.
 
-    # Args:
-    #     new_item: A listing dict (the item the user is considering buying).
-    #     wardrobe: A wardrobe dict with an 'items' key containing a list of
-    #               wardrobe item dicts. May be empty — handle this gracefully.
+    Args:
+        new_item: A listing dict (the item the user is considering buying).
+        wardrobe: A wardrobe dict with an 'items' key containing a list of
+                  wardrobe item dicts. May be empty — handle this gracefully.
 
-    # Returns:
-    #     A non-empty string with outfit suggestions.
-    #     If the wardrobe is empty, offer general styling advice for the item
-    #     rather than raising an exception or returning an empty string.
+    Returns:
+        A non-empty string with outfit suggestions.
+        If the wardrobe is empty, offer general styling advice for the item
+        rather than raising an exception or returning an empty string.
 
-    # TODO:
-    #     1. Check whether wardrobe['items'] is empty.
-    #     2. If empty: call the LLM with a prompt for general styling ideas
-    #        (what kinds of items pair well, what vibe it suits, etc.).
-    #     3. If not empty: format the wardrobe items into a prompt and ask
-    #        the LLM to suggest specific outfit combinations using the new item
-    #        and named pieces from the wardrobe.
-    #     4. Return the LLM's response as a string.
+    TODO:
+        1. Check whether wardrobe['items'] is empty.
+        2. If empty: call the LLM with a prompt for general styling ideas
+           (what kinds of items pair well, what vibe it suits, etc.).
+        3. If not empty: format the wardrobe items into a prompt and ask
+           the LLM to suggest specific outfit combinations using the new item
+           and named pieces from the wardrobe.
+        4. Return the LLM's response as a string.
 
-    # Before writing code, fill in the Tool 2 section of planning.md.
-    # """
+    Before writing code, fill in the Tool 2 section of planning.md.
+    """
     # Replace this with your implementation
 
     
