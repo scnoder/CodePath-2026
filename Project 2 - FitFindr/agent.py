@@ -32,6 +32,76 @@ def _get_groq_client():
             "GROQ_API_KEY not set. Add it to a .env file in the project root."
         )
     return Groq(api_key=api_key)
+SYSTEM_PROMPT = "You are FitFindr, a fashion styling assistant that helps users find thrifted clothing and build outfits."
+TOOL_DEFINITIONS = [
+    {
+        "type": "function",
+        "function": {
+            "name": "search_listings",
+            "description": "Search the mock listings dataset for items matching the description, optional size, and optional price ceiling. Returns a list of matching listing dicts sorted by relevance.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "type": "string",
+                        "description": "Keywords describing what the user is looking for (e.g., 'vintage graphic tee')"
+                    },
+                    "size": {
+                        "type": "string",
+                        "description": "Size string to filter by, or null to skip size filtering. Matching is case-insensitive (e.g., 'M' matches 'S/M')"
+                    },
+                    "max_price": {
+                        "type": "number",
+                        "description": "Maximum price (inclusive), or null to skip price filtering"
+                    }
+                },
+                "required": ["description"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "suggest_outfit",
+            "description": "Given a thrifted item and the user's wardrobe, suggest 1-2 complete outfits. If wardrobe is empty, offers general styling advice.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "new_item": {
+                        "type": "object",
+                        "description": "The listing dict for the thrifted item the user is considering buying"
+                    },
+                    "wardrobe": {
+                        "type": "object",
+                        "description": "The user's wardrobe dict with an 'items' key containing a list of wardrobe item dicts"
+                    }
+                },
+                "required": ["new_item", "wardrobe"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "create_fit_card",
+            "description": "Generate a short 2-4 sentence shareable outfit caption usable as an Instagram/TikTok caption for a thrifted find.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "outfit": {
+                        "type": "string",
+                        "description": "The outfit suggestion string from suggest_outfit"
+                    },
+                    "new_item": {
+                        "type": "object",
+                        "description": "The listing dict for the thrifted item"
+                    }
+                },
+                "required": ["outfit", "new_item"]
+            }
+        }
+    }
+]
 
 # ── session state ─────────────────────────────────────────────────────────────
 
