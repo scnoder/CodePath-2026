@@ -179,12 +179,16 @@ Write out what a full user interaction looks like from start to finish — tool 
 
 **Step 1:**
 <!-- What does the agent do first? Which tool is called? With what input? -->
+The agent parses out the information and calls `search_listings()` to check if the item is in the listings. 
 
 **Step 2:**
 <!-- What happens next? What was returned from step 1? What tool is called now? -->
+Based on the information that was returned from `search_listings()`, it looks if the user wants to look for styling or to create a caption. It calls a tool based on that.
 
 **Step 3:**
 <!-- Continue until the full interaction is complete -->
+This continues until it finds a final string or the counter is finished so too much doesn't happen with the model, causing an infinite loop.
 
 **Final output to user:**
 <!-- What does the user actually see at the end? -->
+The user sees their desired output wheather that is a caption for a fit card or other styles.
