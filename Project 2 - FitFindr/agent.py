@@ -135,6 +135,11 @@ def run_agent(query: str, wardrobe: dict) -> dict:
     #### Select item to use ####
     session["selected_item"] = listings[0]
 
+    #### Calling suggest_outfit() ####
+    suggested_outfit = suggest_outfit(session["selected_item"], wardrobe)
+    session["outfit_suggestion"] = suggested_outfit
+
+    
 # ── CLI test ──────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
