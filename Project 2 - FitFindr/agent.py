@@ -122,6 +122,7 @@ def run_agent(query: str, wardrobe: dict) -> dict:
     )
 
     session["parsed"] = parsed
+
     #### Calling search_listings() ####
     listings = search_listings(session["parsed"]["description"], session["parsed"]["size"], float(session["parsed"]["price"]))
 
@@ -131,7 +132,8 @@ def run_agent(query: str, wardrobe: dict) -> dict:
         session["error"] = "Apologies, there as been a small bump. Please try again!"
         return session
     
-
+    #### Select item to use ####
+    session["selected_item"] = listings[0]
 
 # ── CLI test ──────────────────────────────────────────────────────────────────
 
