@@ -182,7 +182,7 @@ def run_agent(query: str, wardrobe: dict) -> dict:
 
     #### Parsing ####
     response = _get_groq_client().chat.completions.create(
-        model="llama3-8b-8192",
+        model="llama-3.3-70b-versatile",
         messages=[
             {"role": "system", "content": """Extract size, price, and description from the user's input.
             Return ONLY a JSON object with no extra text in this exact format:
@@ -219,7 +219,7 @@ def run_agent(query: str, wardrobe: dict) -> dict:
 
     while count < MAX_RUNNING:
         response = _get_groq_client().chat.completions.create(
-            model="llama3-8b-8192",
+            model="llama-3.3-70b-versatile",
             messages=messages,
             tools=TOOL_DEFINITIONS,
             tool_choice="auto"

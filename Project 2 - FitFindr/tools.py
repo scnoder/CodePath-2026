@@ -156,7 +156,7 @@ def suggest_outfit(new_item: dict, wardrobe: dict) -> str:
      
 
     response = client.chat.completions.create(
-        model="llama3-8b-8192",
+        model="llama-3.3-70b-versatile",
         messages=[
             {"role": "system", "content": "You are a fashion styling assistant. Give concise, helpful styling advice."},
             {"role": "user", "content": content}
@@ -206,7 +206,7 @@ def create_fit_card(outfit: str, new_item: dict) -> str:
             Make sure to mention the item name, price, and platform naturally (once each) and capture the outfit vibe in specific terms.
         """
         response = _get_groq_client().chat.completions.create(
-        model="llama3-8b-8192",
+        model="llama-3.3-70b-versatile",
         temperature=0.9,
         messages=[
                 {"role": "system", "content": "You are a fashion styling assistant. Give concise, helpful styling advice."},
