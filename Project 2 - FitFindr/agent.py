@@ -19,7 +19,18 @@ Usage (once implemented):
 """
 
 from tools import search_listings, suggest_outfit, create_fit_card
+import json # for parsing
 
+# ── Groq client ───────────────────────────────────────────────────────────────
+from groq import Groq
+def _get_groq_client():
+    """Initialize and return a Groq client using GROQ_API_KEY from .env."""
+    api_key = os.environ.get("GROQ_API_KEY")
+    if not api_key:
+        raise ValueError(
+            "GROQ_API_KEY not set. Add it to a .env file in the project root."
+        )
+    return Groq(api_key=api_key)
 
 # ── session state ─────────────────────────────────────────────────────────────
 
@@ -94,6 +105,25 @@ def run_agent(query: str, wardrobe: dict) -> dict:
     """
     # TODO: implement the planning loop
     session = _new_session(query, wardrobe)
+
+    #### Parsing ####
+    response = _get_groq_client().chat.completions.create(
+        model="llama3-8b-8192",
+        messages=[
+            {"role": "system", "content": """Extract size, price, and description from the user's input.
+            Return ONLY a JSON object with no extra text in this exact format:
+            {"description": "...", "size": "..." or null, "price": float or null}"""},
+            {"role": "user", "content": query}
+        ]
+    )
+
+    parsed = json.loads(
+        response.choices[0].message.content.strip()
+    )
+
+    session["parsed"] = parsed
+    ########
+
     session["error"] = "Planning loop not yet implemented."
     return session
 
