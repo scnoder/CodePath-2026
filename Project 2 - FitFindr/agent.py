@@ -122,10 +122,15 @@ def run_agent(query: str, wardrobe: dict) -> dict:
     )
 
     session["parsed"] = parsed
-    ########
+    #### Calling search_listings() ####
+    listings = search_listings(session["parsed"]["description"], session["parsed"]["size"], float(session["parsed"]["price"]))
 
-    session["error"] = "Planning loop not yet implemented."
-    return session
+    if listings:
+        session["search_results"] = listings
+    else:
+        session["error"] = "Apologies, there as been a small bump. Please try again!"
+        return session
+    
 
 
 # ── CLI test ──────────────────────────────────────────────────────────────────
