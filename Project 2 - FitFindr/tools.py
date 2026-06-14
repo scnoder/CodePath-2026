@@ -196,6 +196,24 @@ def create_fit_card(outfit: str, new_item: dict) -> str:
     Before writing code, fill in the Tool 3 section of planning.md.
     """
     # Replace this with your implementation
-    return ""
 
-print(load_listings()[0])
+    if outfit.strip():
+        content = f"""
+            My outfit is {outfit}.
+            Here is more details about the item: {new_item}
+
+            Create a usable 2-4 sentence usable as an Instagram and Tiktok caption.
+            Make sure to mention the item name, price, and platform naturally (once each) and capture the outfit vibe in specific terms.
+        """
+        response = _get_groq_client().chat.completions.create(
+        model="llama3-8b-8192",
+        temperature=0.9,
+        messages=[
+                {"role": "system", "content": "You are a fashion styling assistant. Give concise, helpful styling advice."},
+                {"role": "user", "content": content}
+            ]
+        )
+        return response.choices[0].message.content
+
+    else:
+        return "Sorry, I could not generate a caption due to there being no outfit. Please try again."

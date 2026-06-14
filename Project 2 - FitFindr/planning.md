@@ -59,16 +59,19 @@ It would return a general statment for other items.
 
 **What it does:**
 <!-- Describe what this tool does in 1–2 sentences -->
+The tool takes in an outfit and details about the outfit and returns a string for a good caption for social media.
 
 **Input parameters:**
 <!-- List each parameter, its type, and what it represents -->
-- `outfit` (...): ...
+- `outfit` (...): It is the name describing what the outfit is.
 
 **What it returns:**
 <!-- Describe the return value -->
+It returns a string describing the outfit for a proper Instagram or Tiktok caption.
 
 **What happens if it fails or returns nothing:**
 <!-- What should the agent do if the outfit data is incomplete? -->
+The code will return "Sorry, I could not generate a caption due to there being no outfit. Please try again."
 
 ---
 
@@ -82,6 +85,7 @@ It would return a general statment for other items.
 
 **How does your agent decide which tool to call next?**
 <!-- Describe the logic your planning loop uses. What does it look at? What conditions change its behavior? How does it know when it's done? -->
+An agent decides which tools to call based on the description of the tool itself. It checks for keywords and if there are any changes to those keywords or if it needs anything, then it uses other tools. The agent knows that it is done once it hits a maximum amount of iterations or credits or it goes to a single string with no tools needed to evaluate it.
 
 ---
 
@@ -89,6 +93,7 @@ It would return a general statment for other items.
 
 **How does information from one tool get passed to the next?**
 <!-- Describe how your agent stores and accesses state within a session. What data is tracked? How is it passed between tool calls? -->
+
 
 ---
 
