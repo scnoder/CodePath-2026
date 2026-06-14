@@ -130,7 +130,7 @@ def run_agent(query: str, wardrobe: dict) -> dict:
         session["search_results"] = listings
     else:
         session["error"] = "Apologies, there as been a small bump. Please try again!"
-        return session
+        return session["error"]
     
     #### Select item to use ####
     session["selected_item"] = listings[0]
@@ -139,7 +139,9 @@ def run_agent(query: str, wardrobe: dict) -> dict:
     suggested_outfit = suggest_outfit(session["selected_item"], wardrobe)
     session["outfit_suggestion"] = suggested_outfit
 
-    
+    #### Calling create_fit_card() ####
+    fit_card = create_fit_card(suggested_outfit, listings[0])
+    session["fit_card"] = fit_card
 # ── CLI test ──────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
