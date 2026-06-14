@@ -93,7 +93,7 @@ An agent decides which tools to call based on the description of the tool itself
 
 **How does information from one tool get passed to the next?**
 <!-- Describe how your agent stores and accesses state within a session. What data is tracked? How is it passed between tool calls? -->
-
+The agent stores data and states from a dictionary of who was the respondent and what they used. It is passed as a history parameter between different tool calls.
 
 ---
 
@@ -103,9 +103,9 @@ For each tool, describe the specific failure mode you're handling and what the a
 
 | Tool | Failure mode | Agent response |
 |------|-------------|----------------|
-| search_listings | No results match the query | |
-| suggest_outfit | Wardrobe is empty | |
-| create_fit_card | Outfit input is missing or incomplete | |
+| search_listings | No results match the query |An empty list |
+| suggest_outfit | Wardrobe is empty |A general understanding of the outfit and a style that would match that outfit. |
+| create_fit_card | Outfit input is missing or incomplete |"Sorry, I could not generate a caption due to there being no outfit. Please try again." |
 
 ---
 
@@ -119,6 +119,35 @@ For each tool, describe the specific failure mode you're handling and what the a
      ASCII art, a Mermaid diagram (https://mermaid.js.org/syntax/flowchart.html), or an embedded
      sketch are all fine. You'll share this diagram with an AI tool when asking it to implement
      the planning loop and each individual tool. -->
+
+User input
+    |
+    |
+    v
+Planning loop ----LLM decides which tool to call----------------->
+^                                                                |
+|                                                                |
+|                                                                v
+|                                           -------------------------------------------
+|                                           |                    |                    |
+|                                           |                    |                    |
+|                                           v                    v                    v
+|                                    search_listing()     suggest_outfit()     create_fit_card()
+|                                           -------------------------------------------
+|                                                                |
+|                                                                |
+|                                                                v
+|                                           -------------------------------------------
+|                                           |                    |                    |
+|                                           |                    |                    |
+|                                           v                    v                    v
+|                                    more tools needed      no tool calls     count >= MAX
+|                                           -------------------------------------------
+|                                           |                    |                    |
+|                                           |                    |                    |
+|                                           v                    v                    v
+---------------------------------------------               Final String         Max iterations
+
 
 ---
 
@@ -136,7 +165,7 @@ For each tool, describe the specific failure mode you're handling and what the a
      before trusting it" is a plan. -->
 
 **Milestone 3 — Individual tool implementations:**
-
+I plan to use Claude and give it descriptions of where I have problems on to give me fixes for the code. This can be either syntax errors or logic errors to just to check where something has gone wrong. I will also give it my diagram for when implementations are needed.
 **Milestone 4 — Planning loop and state management:**
 
 ---
