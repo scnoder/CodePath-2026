@@ -69,39 +69,101 @@ def search_listings(
 
     Before writing code, fill in the Tool 1 section of planning.md.
     """
-    # Replace this with your implementation
-    return []
+    
+    filtered_listings = []
+    
+    scored_listings = []
+    for cloth in load_listings():
+        if max_price is not None and max_price < cloth["price"]:
+            continue
+        if size is not None and size.lower() not in cloth["size"].lower():
+            continue
+        filtered_listings.append(cloth)
+
+    keywords = set(description.lower().split())
+
+    for cloth in filtered_listings:
+        listing_text = (
+            cloth["title"] + " " +
+            cloth["description"] + " " +
+            " ".join(cloth["style_tags"])
+        ).lower()
+
+        score = 0
+
+        for word in keywords:
+            if word in listing_text:
+                score += 1
+        
+        cloth["score"] = score
+    
+    for cloth in filtered_listings:
+        if cloth["score"] > 0:
+            scored_listings.append(cloth)
+        
+    scored_listings = sorted(scored_listings, key=lambda x: x["score"], reverse=True)
+
+    return scored_listings
 
 
 # ── Tool 2: suggest_outfit ────────────────────────────────────────────────────
 
 def suggest_outfit(new_item: dict, wardrobe: dict) -> str:
-    """
-    Given a thrifted item and the user's wardrobe, suggest 1–2 complete outfits.
+    # """
+    # Given a thrifted item and the user's wardrobe, suggest 1–2 complete outfits.
 
-    Args:
-        new_item: A listing dict (the item the user is considering buying).
-        wardrobe: A wardrobe dict with an 'items' key containing a list of
-                  wardrobe item dicts. May be empty — handle this gracefully.
+    # Args:
+    #     new_item: A listing dict (the item the user is considering buying).
+    #     wardrobe: A wardrobe dict with an 'items' key containing a list of
+    #               wardrobe item dicts. May be empty — handle this gracefully.
 
-    Returns:
-        A non-empty string with outfit suggestions.
-        If the wardrobe is empty, offer general styling advice for the item
-        rather than raising an exception or returning an empty string.
+    # Returns:
+    #     A non-empty string with outfit suggestions.
+    #     If the wardrobe is empty, offer general styling advice for the item
+    #     rather than raising an exception or returning an empty string.
 
-    TODO:
-        1. Check whether wardrobe['items'] is empty.
-        2. If empty: call the LLM with a prompt for general styling ideas
-           (what kinds of items pair well, what vibe it suits, etc.).
-        3. If not empty: format the wardrobe items into a prompt and ask
-           the LLM to suggest specific outfit combinations using the new item
-           and named pieces from the wardrobe.
-        4. Return the LLM's response as a string.
+    # TODO:
+    #     1. Check whether wardrobe['items'] is empty.
+    #     2. If empty: call the LLM with a prompt for general styling ideas
+    #        (what kinds of items pair well, what vibe it suits, etc.).
+    #     3. If not empty: format the wardrobe items into a prompt and ask
+    #        the LLM to suggest specific outfit combinations using the new item
+    #        and named pieces from the wardrobe.
+    #     4. Return the LLM's response as a string.
 
-    Before writing code, fill in the Tool 2 section of planning.md.
-    """
+    # Before writing code, fill in the Tool 2 section of planning.md.
+    # """
     # Replace this with your implementation
-    return ""
+
+    
+    client = _get_groq_client()
+    
+    
+
+    if wardrobe["items"]:
+        content = f"""
+            I'm considering buything this item: {new_item}.
+            Here are items I already own: {wardrobe["items"]}
+
+            What items from my wardrobe pair well with the new item? What outfits could I make?
+        """
+    else:
+        content = f"""
+            I'm considering buying this item: {new_item}.
+            
+            I don't have any wardrobe items yet. What kinds of items would pair well with this? What vibe or aesthetic does it suit?
+        """
+     
+
+    response = client.chat.completions.create(
+        model="llama3-8b-8192",
+        messages=[
+            {"role": "system", "content": "You are a fashion styling assistant. Give concise, helpful styling advice."},
+            {"role": "user", "content": content}
+        ]
+    )
+
+    return response.choices[0].message.content
 
 
 # ── Tool 3: create_fit_card ───────────────────────────────────────────────────
@@ -135,3 +197,5 @@ def create_fit_card(outfit: str, new_item: dict) -> str:
     """
     # Replace this with your implementation
     return ""
+
+print(load_listings()[0])

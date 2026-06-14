@@ -16,18 +16,21 @@ You must have at least 3 tools. The three required tools are listed — add any 
 
 **What it does:**
 <!-- Describe what this tool does in 1–2 sentences -->
+This tool will go through all of the listing.json and finds the item that the user requested.
 
 **Input parameters:**
 <!-- List each parameter, its type, and what it represents -->
-- `description` (str): ...
-- `size` (str): ...
-- `max_price` (float): ...
+- `description` (str): It is the keywords of the item that the user is looking for.
+- `size` (str): It is the size of the item that the user is looking for.
+- `max_price` (float): It is the maximum price that they will go for that item.
 
 **What it returns:**
 <!-- Describe the return value — what fields does a result contain? -->
+It returns a dictionary of all the items that the user wanted most likely.
 
 **What happens if it fails or returns nothing:**
 <!-- What should the agent do if no listings match? -->
+If it fails or returns nothing it should return that the model cannot find anything and should reccommend other items that are similar and avaliable.
 
 ---
 
@@ -35,17 +38,20 @@ You must have at least 3 tools. The three required tools are listed — add any 
 
 **What it does:**
 <!-- Describe what this tool does in 1–2 sentences -->
+This tool looks at the given item and the user's wardrobe and checks to see if there are any items in the listings that can help the user with their style.
 
 **Input parameters:**
 <!-- List each parameter, its type, and what it represents -->
-- `new_item` (dict): ...
-- `wardrobe` (dict): ...
-
+- `new_item` (dict): It is a dictionary of the user's thrifted item.
+- `wardrobe` (dict): The wardrobe is what they currently have.
+ 
 **What it returns:**
 <!-- Describe the return value -->
+The return statement should be a string of other items that matches their style.
 
 **What happens if it fails or returns nothing:**
 <!-- What should the agent do if the wardrobe is empty or no outfit can be suggested? -->
+It would return a general statment for other items.
 
 ---
 
