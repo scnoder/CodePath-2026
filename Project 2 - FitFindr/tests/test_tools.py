@@ -1,4 +1,4 @@
-from tools import search_listings
+from tools import *
 
 def test_search_returns_results():
     results = search_listings("vintage graphic tee", size=None, max_price=50)
