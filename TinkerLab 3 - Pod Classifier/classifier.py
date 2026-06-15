@@ -55,7 +55,40 @@ def build_few_shot_prompt(labeled_examples: list[dict], description: str) -> str
 
     Before writing code, complete specs/classifier-spec.md.
     """
-    return ""
+
+
+    examples_text = ""
+
+    for i in labeled_examples:
+        examples_text += f"Title: {i['title']}\n"
+        examples_text += f"Description: {i['description']}\n"
+        examples_text += f"Label: {i['label']}\n"
+        examples_text += "---\n"
+    
+    prompt = f"""You are classifying podcast eposodes based on if they are an interview, panel, narrative, or a solo.
+            You are classifying podcast episodes by their format. Classify the episode into exactly one of these four labels:
+
+            - interview: a conversation between a host and one or more guests
+            - solo: a single host speaking from memory, experience, or opinion — no guests, no assembled external sources
+            - panel: multiple guests with roughly equal speaking time, often debating or discussing a topic together
+            - narrative: a story assembled from external sources — interviews, archival audio, reporting — with a clear narrative arc
+
+            Return only the label and your reasoning. Do not explain the taxonomy.
+
+            Here is a list of all of the labels:
+            {examples_text}
+
+            Now, classify this episode:
+            Description: {description}
+            Label: ?
+
+            Classify the episode above. Return your answer in this format:
+            Label = <label>
+            Reasoning: <brief explanation>
+    """
+
+
+    return prompt
 
 
 def classify_episode(description: str, labeled_examples: list[dict]) -> dict:
