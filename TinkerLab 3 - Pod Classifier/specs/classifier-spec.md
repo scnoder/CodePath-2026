@@ -65,9 +65,9 @@ label was applied — title and description are both useful; other fields
 **Example block sketch (write one concrete example):**
 
 ```
-Title: {title}
-Description: {description}
-Label: {label}
+Title: Can Technology Fix Loneliness?
+Description: Social isolation has become one of the defining public health challenges of the moment. This week, we put together a panel that's probably too interdisciplinary to agree on anything: a sociologist who studies loneliness, a technologist who builds social products, a therapist who sees clients dealing with it, and a philosopher who thinks the framing is wrong. We don't pretend to resolve the question. But we think the disagreement itself is clarifying.
+Label: panel
 ```
 
 ---
@@ -91,10 +91,7 @@ the format below:" followed by the output format you chose.
 **What output format should you request from the LLM?**
 
 ```
-[blank — you need to parse the response in classify_episode(). What format
-makes parsing reliable? Think about: a single label on its own line?
-A structured format like "Label: X / Reasoning: Y"? JSON?
-What are the tradeoffs?]
+A clear string format or a JSON file will make the parsing reliable. A label on it's own line is most ideal because it will be easier to detect and find. A structed format is best like "Label: X / Reasoning: Y" because it is more easier to read by the LLM. The tradeoffs compared to JSON files is that a string would be easier to mess up and have minor sytax errors that can be major in the long run.
 ```
 
 ---
@@ -102,8 +99,7 @@ What are the tradeoffs?]
 **Edge cases to handle in the prompt:**
 
 ```
-[blank — what if labeled_examples is empty? What if the description is very
-short? How does your prompt handle these?]
+If labeled_examples is empty, there should be a graceful error message and the program should stop. This will prevent error messages from the model. If the description is very short, then it should compare the given descriptions with the description of the examples in order to get a proper analysis.
 ```
 
 ---
@@ -159,9 +155,7 @@ Extract the response text from:
 **Step 3 — Parse the response:**
 
 ```
-[blank — how do you extract the label and reasoning from the LLM's text output?
-What string operations or parsing logic do you need?
-This depends on the output format you chose in build_few_shot_prompt.]
+I will extract the label by stripping all of the whitespaces and unnecessary characters and then making everything in lowercase. Then I will loop through the labels and check if one of those labels are in the text input. Finally, I will return or store the information.
 ```
 
 ---
@@ -169,8 +163,7 @@ This depends on the output format you chose in build_few_shot_prompt.]
 **Step 4 — Validate the label:**
 
 ```
-[blank — what do you do if the LLM returns a label that isn't in VALID_LABELS?
-What should label be set to?]
+If the LLM returns a label that isn't in VALID_LABELS then the label should be set to "unknown" temporarily and then ran again.
 ```
 
 ---
@@ -178,9 +171,7 @@ What should label be set to?]
 **Step 5 — Handle errors gracefully:**
 
 ```
-[blank — what could go wrong? (Network error? Unparseable response?)
-What should the function return if something fails?
-Hint: the evaluation loop runs 20 calls — one bad response shouldn't crash everything.]
+If there is an unparseable response, the function should return an error message that will be a string and end the running of the program.
 ```
 
 ---
