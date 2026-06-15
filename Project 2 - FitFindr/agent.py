@@ -47,11 +47,11 @@ TOOL_DEFINITIONS = [
                         "description": "Keywords describing what the user is looking for (e.g., 'vintage graphic tee')"
                     },
                     "size": {
-                        "type": "string",
+                        "type": ["string", "null"],
                         "description": "Size string to filter by, or null to skip size filtering. Matching is case-insensitive (e.g., 'M' matches 'S/M')"
                     },
                     "max_price": {
-                        "type": "number",
+                        "type": ["number", "null"],
                         "description": "Maximum price (inclusive), or null to skip price filtering"
                     }
                 },
