@@ -1,0 +1,122 @@
+[
+  {
+    "id": "t001",
+    "title": "Dr. Priya Nair on the Science of Sleep Deprivation",
+    "podcast": "The Body Electric",
+    "description": "Dr. Priya Nair has spent fifteen years studying what happens to the brain when it doesn't sleep. In this episode, we talk through her landmark 2019 study on cumulative sleep debt, what the research says about weekend recovery sleep (spoiler: it doesn't work the way you think), and why she believes the eight-hour standard is more cultural myth than biological fact. She also shares what changed in her own sleep habits after spending a decade measuring everyone else's. If you've ever felt fine on five hours, this conversation will make you rethink that confidence."
+  },
+  {
+    "id": "t002",
+    "title": "Tariq Osei on Building a Jazz Label from a Bedroom Studio",
+    "podcast": "Craft & Commerce",
+    "description": "In 2016, Tariq Osei launched a jazz label from his apartment with a single album and a borrowed recorder. Seven years later, he's distributed music to over forty countries and signed artists who've since played Carnegie Hall. We talk about how he built distribution relationships without industry connections, what he learned from every mistake in his first year, and why he thinks the streaming era has actually been good for jazz specifically. This is one of those conversations where you'll want to take notes."
+  },
+  {
+    "id": "t003",
+    "title": "The Night the Power Grid Failed: An Interview with the Operator on Duty",
+    "podcast": "Infrastructure Stories",
+    "description": "Marcus Webb was the grid operator on call the night of the 2003 Northeast blackout. For the first time, he walks us through the decisions he made in real time — from the first anomalous reading at 3:15 p.m. to the moment he understood the cascade was unstoppable. This isn't a technical post-mortem. It's the story of one person's experience inside a system that was failing faster than anyone could explain. We spoke for three hours; this is an edited version of that conversation."
+  },
+  {
+    "id": "t004",
+    "title": "Anya Kowalski on Why She Left Her Startup to Work at a Co-op",
+    "podcast": "Future of Work Weekly",
+    "description": "Anya Kowalski co-founded a fintech startup that raised $12 million before she walked away from it. Now she's a worker-owner at a small software cooperative, earning considerably less and — by her own account — doing the most meaningful work of her career. We talk about what made her leave, what surprised her about cooperative ownership, and what she'd tell founders who are skeptical that this model can work for technical companies."
+  },
+  {
+    "id": "t005",
+    "title": "What Twenty-Two Years of Teaching Debate Actually Teaches You",
+    "podcast": "How People Learn",
+    "description": "Debate coach James Tran has spent twenty-two years teaching teenagers how to argue — not to win, but to think. In this episode, we talk about how his methods have changed as the information environment has changed, what he thinks competitive debate actually teaches (and what it doesn't), and whether he worries that it's preparing students for a world that no longer rewards nuanced argument. A thoughtful and sometimes surprising conversation."
+  },
+  {
+    "id": "t006",
+    "title": "I Was Wrong About Remote Work",
+    "podcast": "Honest Takes",
+    "description": "For the first three years of the remote work era, I defended it enthusiastically. I wrote essays, gave talks, pushed back on every return-to-office mandate I saw announced. This week I want to talk about what changed my mind — or at least complicated it significantly. This is a thinking-out-loud episode, and I'm not sure I've landed anywhere definitive. But I think the conversation has gotten more nuanced than the debate usually lets on, and I want to try to do it justice."
+  },
+  {
+    "id": "t007",
+    "title": "The Quiet Decline of the Personal Blog",
+    "podcast": "The Long Read",
+    "description": "Before social media, millions of people maintained personal blogs. They weren't trying to build audiences or monetize content — they were just writing. This week I want to think through what we lost when that era ended, why the blog revival people have predicted for a decade hasn't really happened, and whether the Substack wave is actually something different or just a more professional version of the same thing. I'll also share some personal history: I had a blog from 2004 to 2011, and I've been thinking lately about what I wrote and who I was writing for."
+  },
+  {
+    "id": "t008",
+    "title": "On Saying No",
+    "podcast": "Working Slowly",
+    "description": "This week I've been thinking about refusal — specifically, the quiet, non-confrontational no that most of us have never been taught to give. Not the dramatic walkout or the polished declination email. Just the ability to say no to something without elaborate justification. I don't think this is a natural skill. I think it's practiced. And I've been practicing it badly for most of my adult life. Some thoughts on what I'm trying now, and why it's harder than it should be."
+  },
+  {
+    "id": "t009",
+    "title": "The Year I Quit My Career and Started Over",
+    "podcast": "Starting Over",
+    "description": "In 2018 I left a job I'd had for eleven years, sold most of what I owned, and moved to a city where I didn't know anyone. This episode is about that year — what I expected, what actually happened, and what I think I was really running from. I've wanted to talk about this for a while, but I needed some distance first. It's a personal episode, and it gets into some things I don't usually discuss publicly. I hope it's useful to someone."
+  },
+  {
+    "id": "t010",
+    "title": "Five Mistakes I Made Running a Newsletter",
+    "podcast": "Creator Debrief",
+    "description": "I've been running a weekly newsletter for four years. In that time I've made most of the obvious mistakes and a few I hadn't seen anyone write about. This week I want to go through five of them — not as confessional but as practical documentation of what I'd do differently. If you're thinking about starting something similar, or if you're in year one and wondering why it's harder than it looked, I think this will be useful."
+  },
+  {
+    "id": "t011",
+    "title": "Four Researchers Debate Whether Replication Will Save Science",
+    "podcast": "Open Questions",
+    "description": "The replication crisis in social psychology — and fields beyond it — has prompted years of debate about what it means and what to do about it. This week we bring together four researchers with genuinely different views: a psychologist who has led large-scale replication efforts, a philosopher of science skeptical of replication as a standard, a statistician who thinks the problem is methodological, and a journal editor wrestling with what she can actually change. No consensus was reached. That's the point."
+  },
+  {
+    "id": "t012",
+    "title": "Three VCs on What the AI Boom Looks Like From the Inside",
+    "podcast": "Capital Conversations",
+    "description": "We brought together three venture investors who have spent the past two years making bets in artificial intelligence — one at an early-stage firm focused on infrastructure, one at a growth-stage fund backing applications, and one who has become notably skeptical of the sector's near-term valuations. They talk about where the money is actually going, what founders are getting wrong, and whether the current moment feels more like 2000 or something genuinely different. They disagreed on almost everything."
+  },
+  {
+    "id": "t013",
+    "title": "Teachers Roundtable: AI in the Classroom, One Year Later",
+    "podcast": "Education Futures",
+    "description": "We convene a roundtable with four middle and high school teachers — from public schools, private schools, and one charter network — to talk about what AI tools have actually changed in their classrooms over the past year. Not the think-piece version of this conversation, but the day-to-day reality: the cheating questions, the grading questions, the moments that were actually useful, and the moments that were deeply weird. Lightly moderated; mostly them talking to each other."
+  },
+  {
+    "id": "t014",
+    "title": "City Planners on the Housing Crisis: Three Cities, Three Approaches",
+    "podcast": "Urban Futures",
+    "description": "Housing in most American cities is a crisis defined by competing diagnoses. Is it zoning? Construction costs? Investor speculation? NIMBYism? We brought together urban planners from Minneapolis, Austin, and Portland — three cities that have taken different approaches over the past decade — to compare what's worked, what hasn't, and what they'd do if they had to start from scratch. A detailed, occasionally contentious conversation that doesn't offer easy answers."
+  },
+  {
+    "id": "t015",
+    "title": "Can Technology Fix Loneliness?",
+    "podcast": "Hard Problems",
+    "description": "Social isolation has become one of the defining public health challenges of the moment. This week, we put together a panel that's probably too interdisciplinary to agree on anything: a sociologist who studies loneliness, a technologist who builds social products, a therapist who sees clients dealing with it, and a philosopher who thinks the framing is wrong. We don't pretend to resolve the question. But we think the disagreement itself is clarifying."
+  },
+  {
+    "id": "t016",
+    "title": "The Orchard That Vanished",
+    "podcast": "Documented",
+    "description": "For two decades, the Velazquez family grew apricots on a forty-acre orchard outside Fresno. In 2019, the trees were bulldozed overnight by a holding company that had acquired the land three years earlier in a sale the family says they didn't understand. This episode follows reporter Dani Kim as she traces the chain of ownership backward — through a shell company in Delaware, a private equity firm in New York, and a pension fund in Oslo — trying to understand what actually happened and to whom it happened."
+  },
+  {
+    "id": "t017",
+    "title": "What We Found in the Attic",
+    "podcast": "American Mysteries",
+    "description": "In 2017, a family renovating a house in rural Ohio found a leather satchel hidden behind insulation in the attic. Inside: cash, photographs, and a hand-drawn map with no explanation. This episode reconstructs the story of who put it there and why, drawing on property records, local newspaper archives, and interviews with people who knew the original owners. What started as a local oddity became something stranger and sadder than anyone expected."
+  },
+  {
+    "id": "t018",
+    "title": "The Last Diner on Route 9",
+    "podcast": "Small Town USA",
+    "description": "Route 9 in upstate New York used to be lined with diners. Now there's one left. This episode follows the Kowalczyk family, who have run The Blue Moon Diner for fifty-three years, through one week in November — the slow Tuesday mornings, the Friday rush, the conversation with the landlord about the lease renewal. The story was built from recordings over several days and includes the voices of regulars, former employees, and family members who don't all agree about the future."
+  },
+  {
+    "id": "t019",
+    "title": "Six Months Underground: The Story of a Failed Tunnel Project",
+    "podcast": "City Builders",
+    "description": "In 2018, a mid-sized city in the Pacific Northwest broke ground on an ambitious underground transit tunnel. Three years and $400 million later, the project was abandoned with less than a mile of tunnel completed. Reporter James Ogata spent six months reviewing documents and interviewing the engineers, politicians, and contractors involved. This episode tells the story of what happened, from the early optimism through the first warning signs to the final decision to stop."
+  },
+  {
+    "id": "t020",
+    "title": "The Year My Father Forgot My Name",
+    "podcast": "Family Stories",
+    "description": "My father was diagnosed with Alzheimer's in 2016. Over the next three years, I kept notes — not systematically, just whenever something happened that I didn't want to forget. This episode is built from those notes. It's the story of what those three years were like for both of us: what I learned about his life that I hadn't known, what I failed to do, and the particular strange grief of losing someone who is still there. This is a piece I've been working on, on and off, for two years."
+  }
+]

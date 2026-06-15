@@ -1,0 +1,4 @@
+groq==1.1.2
+gradio==6.11.0
+python-dotenv==1.0.1
+requests==2.33.1

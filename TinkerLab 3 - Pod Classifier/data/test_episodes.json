@@ -1,0 +1,142 @@
+[
+  {
+    "id": "e001",
+    "title": "Marine Biologist Dr. Amara Diallo on What Coral Bleaching Actually Looks Like",
+    "podcast": "Field Notes",
+    "description": "Dr. Amara Diallo has spent twenty years diving on coral reefs from the Great Barrier Reef to the Maldives. In this conversation, she describes what a bleaching event looks like underwater in real time, explains the biology of why coral bleaches and under what conditions it can recover, and pushes back on narratives she thinks are both too optimistic and too catastrophizing. We also talk about what it's like to watch a place you've studied for years die in front of you. A vivid, sometimes difficult conversation.",
+    "label": "interview"
+  },
+  {
+    "id": "e002",
+    "title": "Organizing at an Amazon Warehouse: A First-Person Account",
+    "podcast": "The Labor Beat",
+    "description": "Renata Souza spent three years working at an Amazon fulfillment center before helping organize her facility's first union drive. In this episode, she walks through what that process actually looked like — the conversations that worked, the ones that backfired, the moments when management figured out what was happening, and what happened to the organizers afterward. This is a practical, specific account from someone who did it, not an analysis from someone who studied it.",
+    "label": "interview"
+  },
+  {
+    "id": "e003",
+    "title": "First-Gen, Then What? A Conversation with Career Coach Sonia Park",
+    "podcast": "Making It",
+    "description": "Sonia Park grew up as the first in her family to attend college, and now she spends her days coaching first-generation graduates navigating professional environments that weren't designed for them. We talk about the specific things that make those environments disorienting — the unwritten rules, the networking customs, the ways that people signal class background without knowing they're doing it — and what actually helps. Practical and warm in equal measure.",
+    "label": "interview"
+  },
+  {
+    "id": "e004",
+    "title": "Director Fatima Al-Hassan on Making a Film About Her Own Family",
+    "podcast": "The Craft",
+    "description": "Fatima Al-Hassan spent four years making a documentary about her grandmother's journey from Sudan to London. In this conversation, she talks about what it felt like to point a camera at people she loved, the scenes she chose not to include and why, and how her relationship with her grandmother changed during the making of the film. The documentary premieres next month, but this conversation covers the decisions that shaped it — and the ones that almost ended it.",
+    "label": "interview"
+  },
+  {
+    "id": "e005",
+    "title": "Chef Marcus Lin on What Restaurant Culture Gets Wrong About Burnout",
+    "podcast": "Behind the Pass",
+    "description": "Marcus Lin has cooked in Michelin-starred kitchens on three continents and walked away from all of them. He now runs a small neighborhood restaurant in Portland that closes at 8 p.m. and is closed on Sundays. We talk about what the industry romanticizes, what it costs the people who buy into that romance, and what he thinks a sustainable version of serious cooking actually looks like. A conversation that doesn't pull punches.",
+    "label": "interview"
+  },
+  {
+    "id": "e006",
+    "title": "I Deleted Social Media for Six Months. Here's What I Actually Learned.",
+    "podcast": "Offline",
+    "description": "Last January I deleted every social media app from my phone and took a six-month break. This episode is my honest account of what happened — what I expected, what surprised me, and what I've decided to do now that the experiment is over. I'm not going to tell you to do what I did. I don't think the answer is the same for everyone. But I do think most of us are less in control of our relationship with these platforms than we believe, and I want to share what made me realize that.",
+    "label": "solo"
+  },
+  {
+    "id": "e007",
+    "title": "On AI Art, Authorship, and What I Think We're Actually Arguing About",
+    "podcast": "Thinking About Art",
+    "description": "The debate about AI-generated art tends to run on two tracks: the legal track (copyright, training data, ownership) and the philosophical track (what is creativity, what is authorship). This week I want to take the philosophical track seriously, because I think it's where the more interesting questions actually live. I don't have a settled view on this, but I have some observations about what the disagreement is really about — and I think they're worth putting out there.",
+    "label": "solo"
+  },
+  {
+    "id": "e008",
+    "title": "Growing Up Between Languages",
+    "podcast": "Where I'm From",
+    "description": "I grew up speaking Tagalog at home and English everywhere else, and for most of my childhood I tried to keep those two worlds from overlapping. This episode is about what that cost me and what it gave me — the way being bilingual shapes how you move through the world, the specific feeling of not having the right word in either language, and why I've spent the past few years trying to recover something I spent years trying to lose.",
+    "label": "solo"
+  },
+  {
+    "id": "e009",
+    "title": "52 Books: What I Read This Year and What I'll Remember",
+    "podcast": "Reading Life",
+    "description": "I read fifty-two books this year. Some were assigned. Most were chosen. A few were mistakes that I finished out of stubbornness. This episode is my year-end reflection — not a ranked list, but an attempt to say something true about what reading did for me this year, which books I've already forgotten, and which ones I think I'll carry for a while. If you're looking for recommendations, I've included a list in the show notes.",
+    "label": "solo"
+  },
+  {
+    "id": "e010",
+    "title": "In Defense of Boredom",
+    "podcast": "Against Productivity",
+    "description": "We have declared war on boredom, and I think we are losing something important in the process. This week I want to make a case for sitting with nothing to do — not as a productivity hack, not as mindfulness practice, but as something valuable in itself. I'm going to get into some psychology research on this, but mostly I want to think through what boredom actually does and why we've decided it needs to be optimized away.",
+    "label": "solo"
+  },
+  {
+    "id": "e011",
+    "title": "Three Investigative Journalists on the Future of Local News",
+    "podcast": "The Fourth Estate",
+    "description": "Local news has been collapsing for twenty years, and the pace hasn't slowed. Three investigative journalists who have spent their careers at regional and local outlets sit down to talk about what's been lost, what new models have actually worked, and whether there's any realistic scenario in which local accountability journalism survives the next decade. They don't agree, which makes for a better conversation than a consensus would.",
+    "label": "panel"
+  },
+  {
+    "id": "e012",
+    "title": "Four Physicians on What the Data Actually Shows About Preventive Care",
+    "podcast": "Evidence-Based",
+    "description": "Preventive care is nearly universally praised and unevenly practiced. This week, four physicians with different specialties and practice settings sit down to go through the actual evidence on several commonly recommended interventions — annual physicals, certain screenings, vitamin supplementation — and discuss where the science is solid, where it's weaker than the guidelines suggest, and where they personally disagree with standard recommendations. An unusually frank conversation.",
+    "label": "panel"
+  },
+  {
+    "id": "e013",
+    "title": "On Belonging: Five Perspectives from the Hyphen",
+    "podcast": "In Between",
+    "description": "What does it mean to be from a place you've never fully been allowed to claim? Five people — a second-generation Korean American, a Mexican American born on the border, a Somali refugee who became a citizen, a white American who grew up overseas, and a Black American whose family has been in the South for twelve generations — sit down to talk about belonging, identity, and the question of what you owe the country you're from. Nobody is a spokesperson. Everyone is speaking for themselves.",
+    "label": "panel"
+  },
+  {
+    "id": "e014",
+    "title": "Is Inflation Actually Over? Four Economists Weigh In",
+    "podcast": "Numbers Don't Lie",
+    "description": "Headline inflation has fallen significantly from its 2022 peak. Whether that means inflation is 'over' is a more complicated question — one that four economists with different models, methodologies, and priors are deeply divided about. This episode puts them in the same room and lets them disagree. The result is messier and more informative than a single expert interview would be.",
+    "label": "panel"
+  },
+  {
+    "id": "e015",
+    "title": "Rethinking Drug Policy: A Roundtable Across Perspectives",
+    "podcast": "The Policy Room",
+    "description": "Drug policy sits at the intersection of public health, criminal justice, and deeply held moral intuitions — which means getting four smart people to agree on anything is nearly impossible. This roundtable brings together a public health researcher, a defense attorney, a recovered addict turned advocate, and a former prosecutor to talk about what the evidence shows, what the politics allow, and where they think change is actually possible. A substantive, occasionally tense conversation.",
+    "label": "panel"
+  },
+  {
+    "id": "e016",
+    "title": "The School Board",
+    "podcast": "Local Power",
+    "description": "In 2021, a school board in a mid-sized Ohio city became the center of a national culture war it hadn't asked for. This episode follows what happened over the next two years — how the conflict started, who organized on each side, which fights the board won and lost, and what the community looks like now. Reported over eighteen months, drawing on board meeting recordings, hundreds of emails obtained through public records requests, and interviews with parents, teachers, and board members on all sides.",
+    "label": "narrative"
+  },
+  {
+    "id": "e017",
+    "title": "After the Fire",
+    "podcast": "California Now",
+    "description": "The Camp Fire destroyed the town of Paradise, California in November 2018. This episode follows three families — a retired couple who lost their house, a single mother who lost her job and her housing in the same week, and a firefighter who was on duty that day — through the five years since. It's a story about what disaster recovery actually looks like when the news cameras are gone and the work is just starting.",
+    "label": "narrative"
+  },
+  {
+    "id": "e018",
+    "title": "The Label That Almost Was",
+    "podcast": "Music History",
+    "description": "In 1994, a small record label in Chicago came within one contract of signing a then-unknown singer who would go on to become one of the best-selling artists of the 1990s. The label folded two years later. This episode reconstructs what happened — drawing on interviews with the label's founders, the artist's early collaborators, and music journalists who covered the scene at the time — and asks what the music industry looked like from the outside of its most famous success stories.",
+    "label": "narrative"
+  },
+  {
+    "id": "e019",
+    "title": "The Gardner Heist, Fifty Years Later",
+    "podcast": "Stolen",
+    "description": "In March 1990, two men dressed as police officers walked into the Isabella Stewart Gardner Museum in Boston and walked out with thirteen works of art worth an estimated $500 million. They've never been found. This episode traces the investigation from the night of the theft through the present, examining the leads that went cold, the suspects who were never charged, and the theory that investigators currently find most credible. The empty frames are still on the museum walls.",
+    "label": "narrative"
+  },
+  {
+    "id": "e020",
+    "title": "The Letters My Grandmother Wrote and Never Sent",
+    "podcast": "Roots",
+    "description": "After my grandmother died, we found a shoebox in her closet containing forty-three letters she had written to her family in Vietnam between 1980 and 2005. None of them had ever been mailed. This episode is built from those letters, from the documents of her immigration case, and from conversations with my mother and aunts about what they remember and what they've had to piece together. It's the story of a family that survived a war, scattered across two continents, and found ways to stay connected that I only partially understand.",
+    "label": "narrative"
+  }
+]
