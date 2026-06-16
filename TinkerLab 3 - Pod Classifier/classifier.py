@@ -109,7 +109,40 @@ def classify_episode(description: str, labeled_examples: list[dict]) -> dict:
 
     Before writing code, complete specs/classifier-spec.md.
     """
+    prompt = build_few_shot_prompt(load_labeled_examples(), description)
+
+    format = """Each example should include the episode title, a brief excerpt or the full description, and the correct label. Separate examples with a blank line or a delimiter like "---". Include all fields that help the model see why the label was applied — title and description are both useful; other fields (like episode ID) are not needed.
+
+                Here is an example:
+                Title: Can Technology Fix Loneliness?
+                Description: Social isolation has become one of the defining public health challenges of the moment. This week, we put together a panel that's probably too interdisciplinary to agree on anything: a sociologist who studies loneliness, a technologist who builds social products, a therapist who sees clients dealing with it, and a philosopher who thinks the framing is wrong. We don't pretend to resolve the question. But we think the disagreement itself is clarifying.
+                Label: panel
+
+                Here is the format:
+                Title: {title}
+                Description: {description}
+                Label: ?
+
+        """
+    response = _client.chat.completions.create(
+            model=LLM_MODEL,
+            messages=[
+                {"role": "system", "content": format},
+                {"role": "user", "content": prompt}
+            ],
+            max_tokens=250
+        )
+
+    reply = response.choices[0].message.content
+    
+    listings = load_labeled_examples()
+
+    label = "unknown"
+    for listing in listings:
+        if listing["label"] == list(reply.split())[1]:
+            label = listing
+
     return {
-        "label": None,
-        "reasoning": "Classifier not yet implemented. Complete Milestone 2.",
+        "label": label,
+        "reasoning": reply[24:]
     }
