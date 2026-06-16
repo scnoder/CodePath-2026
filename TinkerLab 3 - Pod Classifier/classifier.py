@@ -109,7 +109,7 @@ def classify_episode(description: str, labeled_examples: list[dict]) -> dict:
 
     Before writing code, complete specs/classifier-spec.md.
     """
-    prompt = build_few_shot_prompt(load_labeled_examples(), description)
+    prompt = build_few_shot_prompt(labeled_examples, description)
 
     format = """Each example should include the episode title, a brief excerpt or the full description, and the correct label. Separate examples with a blank line or a delimiter like "---". Include all fields that help the model see why the label was applied — title and description are both useful; other fields (like episode ID) are not needed.
 
@@ -135,14 +135,25 @@ def classify_episode(description: str, labeled_examples: list[dict]) -> dict:
 
     reply = response.choices[0].message.content
     
-    listings = load_labeled_examples()
+    try: 
+        label = "unknown"
+        reasoning = ""
 
-    label = "unknown"
-    for listing in listings:
-        if listing["label"] == list(reply.split())[1]:
-            label = listing
+        for line in reply.splitlines():
+            if line.startswith("Label:"):
+                label = line.split(":", 1)[1].strip().lower()
+            elif line.startswith("Reasoning:"):
+                reasoning = line.split(":", 1)[1].strip()
 
-    return {
-        "label": label,
-        "reasoning": reply[24:]
-    }
+        if label not in VALID_LABELS:
+            label = "unknown"
+
+        return {
+            "label": label,
+            "reasoning": reasoning
+        }
+    except Exception:
+        return {
+            "label": "unknown",
+            "resoning": ""
+        }
