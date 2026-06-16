@@ -204,24 +204,24 @@ any labels you're unsure about. Annotation quality is part of the lab.
 **Test: what does the raw LLM response look like for one episode?**
 
 ```
-Episode tested: [title]
-Raw response text: [paste it here]
+Episode tested: Loving Yourself, Addiction, and Creative Success.
+Raw response text: The episode features a conversation with Whitney Cummings, where she shares her story and experiences, indicating a one-on-one conversation between the host and a guest, which is characteristic of an interview.
 ```
 
 **How did you parse the label out of the response?**
 
 ```
-[describe the string operations — strip, split, lower, etc.]
+I parsed through the string by finding where it starts with "Label" and "Reasoning" and then stripping it and lowering the text. This allowed for only the necessary words to be provided. 
 ```
 
 **Did any episodes return `"unknown"`? If so, why?**
 
 ```
-[yes / no — if yes, what did the raw response look like?]
+No
 ```
 
 **One thing about the output format that surprised you:**
 
 ```
-[your answer here]
+The output format that surprised me was where it added line spacing and a line break instead of one continuous text.
 ```
