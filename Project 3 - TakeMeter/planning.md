@@ -22,3 +22,17 @@ The distinctions matter because a lot of the rumors are more question-like and m
 ## Metrics
 I will use accuracy for all of the labels and per-label in order to deduce what is different in accuracy between classes and how to make sure what is the problem. I also plan to use an F1 score as a general score to understand and give the model a proper score. A "good enough" performance would be 85%+ accuracy and a high F1 score.
 
+## Baseline Metrics
+🎯 Baseline accuracy: 0.935  (evaluated on 31/31 parseable responses)
+
+Per-class metrics (baseline):
+              precision    recall  f1-score   support
+
+  discussion       1.00      1.00      1.00         8
+        news       0.88      0.88      0.88         8
+     history       1.00      1.00      1.00         8
+       rumor       0.86      0.86      0.86         7
+
+    accuracy                           0.94        31
+   macro avg       0.93      0.93      0.93        31
+weighted avg       0.94      0.94      0.94        31
