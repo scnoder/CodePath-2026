@@ -58,11 +58,11 @@ examples teach the model what each label means at inference time.
 | Component | File | Status |
 |---|---|---|
 | Load + merge labeled examples | `classifier.py` | ✅ Complete |
-| Build few-shot prompt | `classifier.py` | ⬜ TODO (Milestone 2) |
-| Classify a single episode | `classifier.py` | ⬜ TODO (Milestone 2) |
+| Build few-shot prompt | `classifier.py` | ✅ Complete |
+| Classify a single episode | `classifier.py` | ✅ Complete |
 | Run evaluation loop | `evaluate.py` | ✅ Complete |
-| Compute overall accuracy | `evaluate.py` | ⬜ TODO (Milestone 3) |
-| Compute per-class accuracy | `evaluate.py` | ⬜ TODO (Milestone 3) |
+| Compute overall accuracy | `evaluate.py` | ✅ Complete |
+| Compute per-class accuracy | `evaluate.py` | ✅ Complete |
 | Format evaluation report | `evaluate.py` | ✅ Complete |
 | Gradio UI | `app.py` | ✅ Complete |
 
