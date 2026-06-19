@@ -71,3 +71,11 @@ Fine-tuned DistilBERT                  0.581
 ---------------------------------------------
 
 Fine-tuning regression: 0.355
+
+## Reflection
+What it missed was the structural and contextual difference between news and rumor. Both are short, both cite external sources, both talk about transfers and contracts. The difference is epistemic — one is confirmed, one isn't — and that distinction lives in words like "close to," "set to," "interested in" versus "signs," "confirmed," "announced." That's a subtle boundary, and with only ~50 examples per class it wasn't enough data to learn it reliably. The model essentially collapsed news into rumor.
+
+The deeper issue is that the label definitions were human and intentional, but the training signal was statistical and accidental. The model didn't learn what each label means — it learned which words tend to appear in each label's posts. For a small dataset like this, those two things diverge significantly, and the confusion matrix is showing exactly where they diverge most.
+
+## AI Usage
+I asked it about shuffling my dataset because I forgot to. Other than that I didnt use Claude for much.
