@@ -39,3 +39,26 @@ Rumor (7 total):
 - 2 misclassified as discussion.
 
 The main issue is that most of the other data aside from disucssion is being confused as a rumor. Posts without an OTD seem to be more as rumors instead of history.
+
+### Wrong Predictions
+```
+--- #1 ---
+Text:      José Mourinho is the new Real Madrid coach. Presented Next week.
+True:      news
+Predicted: rumor  (confidence: 0.26)
+
+--- #2 ---
+Text:      [COPE] Real Madrid have offered 10 million for Brahim Diaz but City want 20 million but the clubs are close to reaching an agreement on the transfer of the Spaniard. if he joins, Brahim won't be sent ...
+True:      rumor
+Predicted: discussion  (confidence: 0.27)
+
+--- #3 ---
+Text:      Kylian Mbappe is BACK in training. He will be included in the squad against City
+True:      news
+Predicted: discussion  (confidence: 0.27)
+```
+These have all been classified as wrong. The issue with the first one is because there is the header is short which makes the model think that it is a rumor because some of the rumors seems to have smaller data.
+
+The issue with the second one is that the length of the post.
+
+The reason the third one seems to be thought of as discussion is because of the capitalized letters which makes the model think that this is exaggerated text.
