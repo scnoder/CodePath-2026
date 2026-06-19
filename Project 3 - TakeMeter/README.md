@@ -62,3 +62,12 @@ These have all been classified as wrong. The issue with the first one is because
 The issue with the second one is that the length of the post.
 
 The reason the third one seems to be thought of as discussion is because of the capitalized letters which makes the model think that this is exaggerated text.
+
+## Results Comparison
+Model                               Accuracy
+---------------------------------------------
+Zero-shot baseline (Groq)              0.935
+Fine-tuned DistilBERT                  0.581
+---------------------------------------------
+
+Fine-tuning regression: 0.355
