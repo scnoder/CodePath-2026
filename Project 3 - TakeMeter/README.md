@@ -13,3 +13,29 @@ Contains a colab notebook and the CSV file which contains data from r/realmadrid
 
 ## Running
 Pull the Jupyter notebook and run to properly. Upload the dataset provided and use the API key to run Groq.
+
+## Confusion Matrix
+
+Discussion (8 total): 
+- Perfect
+- All 8 predicted correctly
+
+News (8 total):
+- Bad
+- Only 1 correct
+- 2 got misclassified as discussion
+- 5 got misclassified as rumor
+- The model can barely distinguish news from rumor.
+
+History (8 total): 
+- Half right
+- 4 correct
+- 4 misclassified as rumor
+- The model is confusing historical posts with rumors.
+
+Rumor (7 total): 
+- Good
+- 5 correct
+- 2 misclassified as discussion.
+
+The main issue is that most of the other data aside from disucssion is being confused as a rumor. Posts without an OTD seem to be more as rumors instead of history.
