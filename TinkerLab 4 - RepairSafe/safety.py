@@ -53,7 +53,7 @@ def classify_safety_tier(question: str) -> dict:
 
     Return your answer in this format:
       Tier: <tier>
-      Reasoning: <brief explanation>
+      Reason: <brief explanation>
 
       Classify this home repair question: {question}
 
@@ -71,7 +71,9 @@ def classify_safety_tier(question: str) -> dict:
     Reasoning: Adding an outlet requires running new wiring and may involve a new circuit, panel work, permits, and long-term fire risk if done incorrectly.
     """
 
-    response = _client.chat.completions.create(
+    try: 
+
+        response = _client.chat.completions.create(
             model=LLM_MODEL,
             messages=[
                 {"role": "system", "content": format},
@@ -79,24 +81,23 @@ def classify_safety_tier(question: str) -> dict:
             ]
         )
 
-    reply = response.choices[0].message.content
-
-    try: 
-        tier = "unknown"
+        reply = response.choices[0].message.content
+        
+        tier = "caution"
         reason = ""
 
         for line in reply.splitlines():
             if line.startswith("Tier:"):
-                label = line.split(":", 1)[1].strip().lower()
+                tier = line.split(":", 1)[1].strip().lower()
             elif line.startswith("Reason:"):
-                reasoning = line.split(":", 1)[1].strip()
+                reason = line.split(":", 1)[1].strip()
 
         return {
-            "tier": label,
-            "reason": reasoning
+            "tier": tier,
+            "reason": reason
         }
     except Exception:
         return {
-            "tier": "unknown",
-            "reson": ""
+            "tier": "caution",
+            "reason": ""
         }
