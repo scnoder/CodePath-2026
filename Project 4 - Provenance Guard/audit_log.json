@@ -1,0 +1,47 @@
+[
+  {
+    "content_id": "ff050ae3-1730-40ca-9ca6-2639d69f2fa7",
+    "creator_id": "test1",
+    "timestamp": "2026-07-01T03:22:29.482819+00:00",
+    "attribution": "likely_human",
+    "confidence": 0.0797,
+    "llm_score": 0.0,
+    "stylometric_score": 0.2278,
+    "status": "classified",
+    "appeal_reasoning": null
+  },
+  {
+    "content_id": "80eb1ff8-6fe8-4500-b0fe-94de17285e16",
+    "creator_id": "test2-raven",
+    "timestamp": "2026-07-01T03:34:06.942063+00:00",
+    "attribution": "likely_human",
+    "confidence": 0.1225,
+    "llm_score": 0.0,
+    "stylometric_score": 0.35,
+    "status": "classified",
+    "appeal_reasoning": null
+  },
+  {
+    "content_id": "6df4911b-d6ef-4457-8e61-68efc2aeaef1",
+    "creator_id": "test2-raven",
+    "timestamp": "2026-07-01T03:34:40.706438+00:00",
+    "attribution": "likely_human",
+    "confidence": 0.0442,
+    "llm_score": 0.0,
+    "stylometric_score": 0.1263,
+    "status": "classified",
+    "appeal_reasoning": null
+  },
+  {
+    "content_id": "e9f84c74-f7e0-4450-92ae-56cb6c32147d",
+    "creator_id": "test3-raven",
+    "timestamp": "2026-07-01T03:34:52.619632+00:00",
+    "attribution": "likely_human",
+    "confidence": 0.0442,
+    "llm_score": 0.0,
+    "stylometric_score": 0.1263,
+    "status": "under_review",
+    "appeal_reasoning": "this is AI because of the lack of emotions in the text",
+    "appeal_timestamp": "2026-07-01T03:35:26.527392+00:00"
+  }
+]
