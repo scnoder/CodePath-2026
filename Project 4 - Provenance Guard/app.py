@@ -4,7 +4,7 @@ import json
 import math
 import re
 from datetime import datetime, timezone
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from groq import Groq
@@ -33,6 +33,21 @@ LOG_FILE = "audit_log.json"
 # ---------------------------------------------------------------------------
 THRESHOLD_AI = 0.70
 THRESHOLD_UNCERTAIN_LOW = 0.45
+
+
+
+# ---------------------------------------------------------------------------
+# Serve frontend
+# ---------------------------------------------------------------------------
+
+@app.route("/")
+def index():
+    return send_from_directory(".", "index.html")
+
+
+@app.route("/<path:filename>")
+def static_files(filename):
+    return send_from_directory(".", filename)
 
 
 # ---------------------------------------------------------------------------
