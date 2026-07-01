@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Provenance Guard — Tester</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <h1>Provenance Guard — API tester</h1>
+
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('submit')">Submit</button>
+    <button class="tab" onclick="switchTab('appeal')">Appeal</button>
+    <button class="tab" onclick="switchTab('log')">View log</button>
+  </div>
+
+  <div id="tab-submit" class="panel active">
+    <label>Text to analyze</label>
+    <textarea id="sub-text" placeholder="Paste a poem, story, or blog post here..."></textarea>
+    <label>Creator ID</label>
+    <input type="text" id="sub-creator" value="test-user-1" />
+    <br/>
+    <button class="submit-btn" onclick="doSubmit()">Submit for analysis</button>
+    <div id="sub-status"></div>
+    <div id="sub-result" class="result">
+      <p class="attr">Attribution: <span id="r-attr"></span></p>
+      <p class="attr">Confidence: <span id="r-conf"></span></p>
+      <p class="attr">LLM score: <span id="r-llm"></span> &nbsp;|&nbsp; Stylometric score: <span id="r-stylo"></span></p>
+      <p class="attr">Content ID: <span id="r-cid" class="cid"></span></p>
+      <div class="label-text" id="r-label"></div>
+    </div>
+  </div>
+
+  <div id="tab-appeal" class="panel">
+    <label>Content ID (from a submit response)</label>
+    <input type="text" id="app-cid" placeholder="Paste content_id here" />
+    <label>Your reasoning</label>
+    <textarea id="app-reason" placeholder="Explain why you believe this classification is incorrect..." style="min-height:80px;"></textarea>
+    <br/>
+    <button class="submit-btn" onclick="doAppeal()">Submit appeal</button>
+    <div id="app-status"></div>
+    <div id="app-result" class="result">
+      <p class="attr">Status: <span id="a-status"></span></p>
+      <p class="attr" id="a-msg"></p>
+    </div>
+  </div>
+
+  <div id="tab-log" class="panel">
+    <button class="submit-btn" onclick="doLog()">Fetch log</button>
+    <div id="log-status"></div>
+    <div id="log-result" style="margin-top:1rem;"></div>
+  </div>
+
+  <script>
+    const BASE = 'http://127.0.0.1:5000';
+
+    function switchTab(name) {
+      const tabs = ['submit', 'appeal', 'log'];
+      document.querySelectorAll('.tab').forEach((t, i) => t.classList.toggle('active', tabs[i] === name));
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      document.getElementById('tab-' + name).classList.add('active');
+    }
+
+    function badgeFor(attr) {
+      if (attr === 'likely_ai') return '<span class="badge badge-ai">likely AI</span>';
+      if (attr === 'likely_human') return '<span class="badge badge-human">likely human</span>';
+      return '<span class="badge badge-uncertain">uncertain</span>';
+    }
+
+    async function doSubmit() {
+      const text = document.getElementById('sub-text').value.trim();
+      const creator = document.getElementById('sub-creator').value.trim() || 'anonymous';
+      const status = document.getElementById('sub-status');
+      const result = document.getElementById('sub-result');
+      if (!text) { status.innerHTML = '<p class="status-error">Enter some text first.</p>'; return; }
+      status.innerHTML = '<p class="status-loading">Analyzing… this may take a few seconds.</p>';
+      result.classList.remove('show');
+      try {
+        const res = await fetch(BASE + '/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text, creator_id: creator })
+        });
+        const data = await res.json();
+        if (!res.ok) { status.innerHTML = '<p class="status-error">Error: ' + (data.error || res.status) + '</p>'; return; }
+        status.innerHTML = '';
+        document.getElementById('r-attr').innerHTML = data.attribution + badgeFor(data.attribution);
+        document.getElementById('r-conf').textContent = (data.confidence * 100).toFixed(1) + '%';
+        document.getElementById('r-llm').textContent = (data.llm_score * 100).toFixed(1) + '%';
+        document.getElementById('r-stylo').textContent = (data.stylometric_score * 100).toFixed(1) + '%';
+        document.getElementById('r-cid').textContent = data.content_id;
+        document.getElementById('r-label').textContent = data.label;
+        result.classList.add('show');
+        document.getElementById('app-cid').value = data.content_id;
+      } catch(e) {
+        status.innerHTML = '<p class="status-error">Could not reach server. Is app.py running?</p>';
+      }
+    }
+
+    async function doAppeal() {
+      const cid = document.getElementById('app-cid').value.trim();
+      const reason = document.getElementById('app-reason').value.trim();
+      const status = document.getElementById('app-status');
+      const result = document.getElementById('app-result');
+      if (!cid || !reason) { status.innerHTML = '<p class="status-error">Fill in both fields.</p>'; return; }
+      status.innerHTML = '<p class="status-loading">Submitting appeal…</p>';
+      result.classList.remove('show');
+      try {
+        const res = await fetch(BASE + '/appeal', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ content_id: cid, creator_reasoning: reason })
+        });
+        const data = await res.json();
+        if (!res.ok) { status.innerHTML = '<p class="status-error">Error: ' + (data.error || res.status) + '</p>'; return; }
+        status.innerHTML = '';
+        document.getElementById('a-status').textContent = data.status;
+        document.getElementById('a-msg').textContent = data.message;
+        result.classList.add('show');
+      } catch(e) {
+        status.innerHTML = '<p class="status-error">Could not reach server. Is app.py running?</p>';
+      }
+    }
+
+    async function doLog() {
+      const status = document.getElementById('log-status');
+      const result = document.getElementById('log-result');
+      status.innerHTML = '<p class="status-loading">Fetching log…</p>';
+      result.innerHTML = '';
+      try {
+        const res = await fetch(BASE + '/log');
+        const data = await res.json();
+        status.innerHTML = '';
+        if (!data.entries || data.entries.length === 0) {
+          result.innerHTML = '<p style="color:#999;font-size:13px;">No entries yet — submit something first.</p>';
+          return;
+        }
+        result.innerHTML = data.entries.slice().reverse().map(e => `
+          <div class="log-entry">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+              <span style="font-size:13px;font-weight:500;">${e.attribution}${badgeFor(e.attribution)}</span>
+              <span style="font-size:12px;color:#999;">${e.status}</span>
+            </div>
+            <p class="attr">Confidence: <span>${(e.confidence*100).toFixed(1)}%</span> &nbsp;|&nbsp; LLM: <span>${(e.llm_score*100).toFixed(1)}%</span> &nbsp;|&nbsp; Stylo: <span>${(e.stylometric_score*100).toFixed(1)}%</span></p>
+            ${e.appeal_reasoning ? `<p class="attr" style="margin-top:6px;">Appeal: <span>${e.appeal_reasoning}</span></p>` : ''}
+            <p class="cid" style="margin-top:6px;">${e.content_id}</p>
+            <p style="font-size:11px;color:#bbb;margin-top:4px;">${e.timestamp}</p>
+          </div>
+        `).join('');
+      } catch(e) {
+        status.innerHTML = '<p class="status-error">Could not reach server. Is app.py running?</p>';
+      }
+    }
+  </script>
+</body>
+</html>
