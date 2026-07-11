@@ -61,10 +61,10 @@ For each issue you find, note: where it is (file + function), what's wrong, and 
 ### Issues
 
 **Issue 1**
-- Location:
-- What's wrong:
-- Why it matters:
-- Suggested fix:
+- Location: `get_list_stats(list_id: str)` line 44
+- What's wrong: The loop is counting every item instead of the items that are unpurchased.
+- Why it matters: It doesn't follow the frontend team's desires of having the shopper's experience easier.
+- Suggested fix: Add an if statement to check whether an item has been purchased or not before adding to the counter.
 
 **Issue 2**
 - Location:
